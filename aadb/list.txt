@@ -4,9 +4,6 @@
     "class": "ads adsbygoogle banner googleads"
   },
   "javascript": [{
-    "src": "//raw.githack.com/sekedus/pagead/master/banner-ad.js",
-    "title": "Simple Ads"
-  }, {
     "src": "//c1.popads.net/pop.js",
     "title": "PopAds"
   }, {
@@ -14,8 +11,8 @@
     "title": "Google Ads"
   }],
   "images": [{
-    "src": "https://raw.githubusercontent.com/sekedus/pagead/master/banner-ad.png",
-    "title": "Simple Ads"
+    "src": "http://googleads.g.doubleclick.net/favicon.ico",
+    "title": "DoubleClick"
   }, {
     "src": "http://admedia.com/images/favicon.ico",
     "title": "AdMedia"
@@ -26,7 +23,16 @@
     "src": "https://www.popads.net/favicon.ico",
     "title": "PopAds"
   }, {
-    "src": "http://googleads.g.doubleclick.net/favicon.ico",
-    "title": "DoubleClick"
+    "src": "https://adservice.google.com/favicon.ico",
+    "title": "adservice"
+  }, {
+    "src": "https://adsense.googleblog.com/favicon.ico",
+    "title": "AdSense Blog"
+  }, {
+    "src": "https://www.google.com/adsense/start/images/favicon.ico",
+    "title": "AdSense"
+  }, {
+    "src": "https://a-ads.com/assets/favicon-1151ee995f14cd6fa1b49ed2e0ccdf44.png",
+    "title": "A-ADS"
   }]
 }
