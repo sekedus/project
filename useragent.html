@@ -4,7 +4,25 @@
   </head>
   <body>
     <script>
-      document.write('<div style="font-size:50px;font-weight:bold;">'+ navigator.userAgent +'</div>');
+      document.write('<div style="font-size:60px;font-weight:bold;">'+ navigator.userAgent +'</div>');
+      /* {website-speed-test} */
+      var user_agent = navigator.userAgent;
+      if (user_agent.search(/Pingdom/ig) != -1) {
+        document.body.style.cssText = 'background:#fdf45b';
+      }
+      if (user_agent.search(/Lighthouse/ig) != -1) {
+        document.body.style.cssText = 'background:#4285f4';
+      }
+      if (user_agent.search(/GTmetrix/ig) != -1) {
+        document.body.style.cssText = 'background:#21759b';
+      }
+      if (user_agent.search(/PTST\//ig) != -1) {
+        document.body.style.cssText = 'background:#121D35';
+      }
     </script>
+    <div style="background:#fdf45b">Pingdom</div>
+    <div style="background:#4285f4">Lighthouse</div>
+    <div style="background:#21759b">GTmetrix</div>
+    <div style="background:#121D35">PTST (WebPageTest)</div>
   </body>
 </html>
