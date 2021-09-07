@@ -13,6 +13,7 @@
       body.webpagetest{background:#121D35;}
       body.dmbrowser{background:#4caf50;}
       body.dareboost{background:#12a6c6;}
+      body.phantomas{background:#ffa319;}
       .ua_title{padding:10px 15px;color:#f5f5f5;display:inline-block;margin:10px;}
       .user_agent{font-weight:bold;margin-top:50px;}
       .user_agent.big{font-size:80px;}
@@ -25,41 +26,47 @@
     <div class="ua_title" style="background:#121D35;">PTST (WebPageTest)</div>
     <div class="ua_title" style="background:#12a6c6;">DareBoost</div>
     <div class="ua_title" style="background:#4caf50;">DMBrowser (Dotcom Monitor)</div>
+    <div class="ua_title" style="background:#ffa319;color:#212240;">Phantomas</div>
     <div class="user_agent"></div>
     <div class="user_agent big"></div>
     <script>
       /* {website-speed-test} */
       var ua_name = '';
       var user_agent = navigator.userAgent;
-      if (user_agent.search(/Pingdom/ig) != -1) {
+      if (user_agent.search(/Pingdom/i) != -1) {
         document.body.style.cssText = 'background:#fdf45b';
         document.body.className = 'pingdom';
         ua_name = 'Pingdom';
       }
-      if (user_agent.search(/Lighthouse/ig) != -1) {
+      if (user_agent.search(/Lighthouse/i) != -1) {
         document.body.style.cssText = 'background:#4285f4';
         document.body.className = 'lighthouse';
         ua_name = 'Lighthouse';
       }
-      if (user_agent.search(/GTmetrix/ig) != -1) {
+      if (user_agent.search(/GTmetrix/i) != -1) {
         document.body.style.cssText = 'background:#21759b';
         document.body.className = 'gtmetrix';
         ua_name = 'GTmetrix';
       }
-      if (user_agent.search(/PTST\//ig) != -1) {
+      if (user_agent.search(/PTST\//i) != -1) {
         document.body.style.cssText = 'background:#121D35';
         document.body.className = 'webpagetest';
         ua_name = 'PTST';
       }
-      if (user_agent.search(/DMBrowser/ig) != -1) {
+      if (user_agent.search(/DMBrowser/i) != -1) {
         document.body.style.cssText = 'background:#4caf50';
         document.body.className = 'dmbrowser';
         ua_name = 'DMBrowser';
       }
-      if (user_agent.search(/DareBoost/ig) != -1) {
+      if (user_agent.search(/DareBoost/i) != -1) {
         document.body.style.cssText = 'background:#12a6c6';
         document.body.className = 'dareboost';
         ua_name = 'DareBoost';
+      }
+      if (user_agent.search(/Phantomas/i) != -1) {
+        document.body.style.cssText = 'background:#ffa319';
+        document.body.className = 'phantomas';
+        ua_name = 'Phantomas';
       }
       var ua_mark = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
       document.querySelector('.user_agent').innerHTML = ua_mark;
