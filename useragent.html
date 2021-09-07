@@ -2,7 +2,7 @@
   <head>
     <title>User Agent</title>
     <style>
-      body{margin:0;padding:15px 20px;color:#f5f5f5;text-align:center;}
+      body{margin:0;padding:15px 20px;color:#f5f5f5;font-size:16px;text-align:center;}
       body.default{color:initial;}
       body.pingdom{background:#fdf45b;color:initial;}
       body.lighthouse{background:#4285f4;}
@@ -10,7 +10,9 @@
       body.webpagetest{background:#121D35}
       body.dmbrowser{background:#4caf50}
       body.dareboost{background:#12a6c6}
-      .ua_title{padding:10px 15px;color:#f5f5f5;display:inline-block;margin:10px;font-size:16px;}
+      .ua_title{padding:10px 15px;color:#f5f5f5;display:inline-block;margin:10px;}
+      .user_agent{font-weight:bold;margin-top:50px;}
+      .user_agent.big{font-size:100px;}
     </style>
   </head>
   <body class="default">
@@ -18,9 +20,10 @@
     <div class="ua_title" style="background:#4285f4;">Lighthouse</div>
     <div class="ua_title" style="background:#21759b;">GTmetrix</div>
     <div class="ua_title" style="background:#121D35;">PTST (WebPageTest)</div>
-    <div class="ua_title" style="background:#4caf50;">DMBrowser (Dotcom Monitor)</div>
     <div class="ua_title" style="background:#12a6c6;">DareBoost</div>
-    <div class="user_agent" style="font-size:60px;font-weight:bold;margin-top:50px;"></div>
+    <div class="ua_title" style="background:#4caf50;">DMBrowser (Dotcom Monitor)</div>
+    <div class="user_agent"></div>
+    <div class="user_agent big"></div>
     <script>
       /* {website-speed-test} */
       var ua_name = '';
@@ -55,7 +58,9 @@
         document.body.className = 'dareboost';
         ua_name = 'DareBoost';
       }
-      document.querySelector('.user_agent').innerHTML = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
+      var ua_mark = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
+      document.querySelector('.user_agent').innerHTML = ua_mark;
+      document.querySelector('.user_agent .big').innerHTML = ua_mark;
       if (window.location.search.indexOf('data=') == -1) window.location.href = window.location.href +'?data='+ encodeURIComponent(user_agent);
     </script>
   </body>
