@@ -27,7 +27,7 @@
     <div class="ua_title" style="background:#121D35;"><a href="//www.webpagetest.org" target="_blank">PTST (WebPageTest)</a></div>
     <div class="ua_title" style="background:#12a6c6;"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
     <div class="ua_title" style="background:#4caf50;"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
-    <div class="ua_title" style="background:#ffa319;color:#212240;"><a href="//yellowlab.tools" target="_blank">Phantomas (Yellow Lab  Tools)</a></div>
+    <div class="ua_title" style="background:#ffa319;color:#212240;"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
     <div class="user_agent"></div>
     <div class="user_agent big"></div>
     <script>
@@ -64,10 +64,10 @@
         document.body.className = 'dareboost';
         ua_name = 'DareBoost';
       }
-      if (user_agent.search(/Phantomas/i) != -1) {
+      if (user_agent.search(/Phantomas|\sYLT\s/i) != -1) {
         document.body.style.cssText = 'background:#ffa319';
         document.body.className = 'phantomas';
-        ua_name = 'Phantomas';
+        ua_name = 'Phantomas|YLT';
       }
       var ua_mark = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
       document.querySelector('.user_agent').innerHTML = ua_mark;
