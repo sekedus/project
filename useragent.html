@@ -56,7 +56,7 @@
         ua_name = 'DareBoost';
       }
       document.querySelector('.user_agent').innerHTML = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
-      if (window.location.search('data=') == -1) window.location.href = window.location.href +'?data='+ encodeURIComponent(user_agent);
+      if (window.location.search.indexOf('data=') == -1) window.location.href = window.location.href +'?data='+ encodeURIComponent(user_agent);
     </script>
   </body>
 </html>
