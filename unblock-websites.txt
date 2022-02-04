@@ -3,6 +3,9 @@
 # Get IP Address from: https://www.infobyip.com/ipbulklookup.php
 #
 
+# [Patch]
+127.0.0.1 update.googleapis.com
+
 # [Other]
 162.223.88.69 rmz.cr
 104.21.67.129 tfp.is
