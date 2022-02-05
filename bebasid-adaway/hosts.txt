@@ -6,6 +6,8 @@
 # Latest update: 2022-02-05T22:01:58+08:00
 # Request update? visit: https://fb.com/sekedus
 #
+# Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
+#
 # BEBASID - Peduli Internet Netral
 # Halaman proyek: https://bebasid.github.io
 # Hosts ditulis oleh Komunitas Internet Netral
