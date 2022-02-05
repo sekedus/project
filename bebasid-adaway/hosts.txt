@@ -3,7 +3,7 @@
 # Project page: https://github.com/sekedus/project/blob/main/bebasid-adaway
 #
 # Name: [MOD One Line]
-# Latest update: 2022-02-05T19:12:21+08:00
+# Latest update: 2022-02-05T20:02:14+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # BEBASID - Peduli Internet Netral
