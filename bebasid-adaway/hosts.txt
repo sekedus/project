@@ -1,9 +1,9 @@
 # BEBASID for AdAway
 # Hosts modified by Sekedus
-# Project page: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
+# Project page: https://github.com/sekedus/project/tree/main/bebasid-adaway
 #
 # Name: [MOD One Line]
-# Latest update: 2022-02-08T07:27:11+08:00
+# Latest update: 2022-02-12T18:29:28+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
@@ -2596,30 +2596,6 @@
 91.208.184.152 akiba-online.com
 91.208.184.152 www.akiba-online.com
 
-# [r18.com]
-143.204.202.71 awscc3001.r18.com
-157.112.94.11 pv3001.r18.com
-99.86.2.59 awspv3001.r18.com
-54.238.250.21 i3.r18.com
-35.72.219.208 stg-i3.r18.com
-35.244.197.142 trac.i3.r18.com
-157.112.92.33 media.r18.com
-18.177.79.118 mlic.r18.com
-104.18.197.45 cflstc.r18.com
-143.204.202.121 kaigaiad.r18.com
-157.112.92.33 affiliate.r18.com
-54.178.246.35 blog.r18.com
-202.6.246.243 api.r18.com
-202.6.246.250 mail.r18.com
-13.32.21.68 pics.r18.com
-104.18.196.45 assets.r18.com
-13.113.12.252 mediarights.r18.com
-52.197.215.75 news.r18.com
-104.18.24.203 www.r18.com
-104.18.24.203 r18.com
-202.6.246.169 stg-www.r18.com
-157.112.92.135 my.r18.com
-
 # [donmai.us]
 104.26.10.39 raikou1.donmai.us
 104.26.10.39 raikou2.donmai.us
@@ -4453,154 +4429,6 @@
 
 85.10.202.22 gallery.redflava.com
 
-# [nutaku.net]
-66.254.114.210 mx10.nutaku.net
-66.254.114.210 mx20.nutaku.net
-66.254.114.210 mx0.nutaku.net
-66.254.114.210 smtp01.nutaku.net
-66.254.114.210 mx01.nutaku.net
-66.254.114.210 mail11.nutaku.net
-66.254.114.210 mta1.nutaku.net
-66.254.114.210 imap1.nutaku.net
-66.254.114.210 smtp1.nutaku.net
-66.254.114.210 server1.nutaku.net
-66.254.114.210 ms1.nutaku.net
-66.254.114.210 ns1.nutaku.net
-66.254.114.210 relay1.nutaku.net
-66.254.114.210 mail02.nutaku.net
-66.254.114.210 mx02.nutaku.net
-66.254.114.210 mail12.nutaku.net
-66.254.114.210 ww12.nutaku.net
-66.254.114.210 imap2.nutaku.net
-66.254.114.210 relay2.nutaku.net
-66.254.114.210 smtp3.nutaku.net
-66.254.114.210 mx3.nutaku.net
-66.254.114.210 mail4.nutaku.net
-66.254.114.210 f051a1018d09cda9174b33a590c701d5.nutaku.net
-66.254.114.210 mail5.nutaku.net
-66.254.114.210 mx5.nutaku.net
-66.254.114.210 mail8.nutaku.net
-66.254.114.210 mail9.nutaku.net
-66.254.114.210 zimbra.nutaku.net
-66.254.114.115 beta.nutaku.net
-66.254.114.210 mta.nutaku.net
-66.254.114.210 posta.nutaku.net
-66.254.114.210 poczta.nutaku.net
-69.16.175.10 cdn.xoverd.nutaku.net
-66.254.114.210 rumblade.nutaku.net
-205.185.208.150 college-life.nutaku.net
-66.254.114.210 home.nutaku.net
-66.254.114.210 comune.nutaku.net
-23.227.38.74 store.nutaku.net
-66.254.114.210 gate.nutaku.net
-66.254.114.210 mailgate.nutaku.net
-66.254.114.210 cdn-foxynite.nutaku.net
-66.254.114.210 remote.nutaku.net
-205.185.208.150 cdn-cosmic-shock-league.nutaku.net
-66.254.114.210 c0d78la23akidbkofjlg.nutaku.net
-208.99.64.43 img.nutaku.net
-66.254.114.210 landing.nutaku.net
-205.185.208.150 cdn-crystal-maidens-staging.nutaku.net
-205.185.208.150 cdn-publishing.nutaku.net
-66.254.114.210 attack-on-moe-h.nutaku.net
-205.185.208.150 cdn-crushcrush.nutaku.net
-69.16.175.10 cdn.crushcrush.nutaku.net
-66.254.114.210 auth.nutaku.net
-66.254.114.210 smtpauth.nutaku.net
-69.16.175.10 cdn.kanpani.nutaku.net
-208.99.64.45 metaapi.nutaku.net
-209.239.166.138 stage-metaapi.nutaku.net
-208.99.64.43 mobileapi.nutaku.net
-208.99.75.62 stage-mobileapi.nutaku.net
-208.99.64.45 userapi.nutaku.net
-64.210.146.2 stage-userapi.nutaku.net
-208.99.64.45 paymentapi.nutaku.net
-205.185.208.150 network.nutaku.net
-205.185.208.150 cdn1-dl.nutaku.net
-66.254.114.210 outmail.nutaku.net
-66.254.114.210 vmail.nutaku.net
-66.254.114.210 newmail.nutaku.net
-66.254.114.210 ssl.nutaku.net
-66.254.114.210 spam.nutaku.net
-69.16.175.10 cdn.girlskingdom.nutaku.net
-66.254.114.135 cross-promotion.nutaku.net
-66.254.114.135 sbox-cross-promotion.nutaku.net
-66.254.114.210 fapceo.nutaku.net
-205.185.208.150 cdn-fapceo.nutaku.net
-205.185.208.150 brazzers-waifu-go.nutaku.net
-66.254.114.210 po.nutaku.net
-205.185.208.150 cdn-peropero.nutaku.net
-66.254.114.210 smtpseguro.nutaku.net
-66.254.114.210 mailapp.nutaku.net
-66.254.114.210 cdn-ssp.nutaku.net
-66.254.114.210 ftp.nutaku.net
-66.254.114.210 authsmtp.nutaku.net
-66.254.114.210 mailer.nutaku.net
-66.254.114.210 sniper.nutaku.net
-205.185.208.150 cdn-updater.nutaku.net
-66.254.114.210 postmaster.nutaku.net
-66.254.114.210 server.nutaku.net
-66.254.114.210 mailserver.nutaku.net
-66.254.114.210 thor.nutaku.net
-205.185.208.150 cdn-throne-of-legends.nutaku.net
-205.185.208.150 heavy-metal-babes.nutaku.net
-205.185.208.150 cdn1-images.nutaku.net
-66.254.114.210 video-luvgames.nutaku.net
-205.185.208.150 cdn-osawaris.nutaku.net
-205.185.208.150 cdn-girls-on-tanks.nutaku.net
-167.89.123.54 links.nutaku.net
-66.254.114.210 mails.nutaku.net
-66.254.114.210 ms.nutaku.net
-66.254.114.210 dns.nutaku.net
-205.185.208.150 ninja-maidens.nutaku.net
-205.185.208.150 cdn-crystal-maidens.nutaku.net
-69.16.175.42 cdn.crystal-maidens.nutaku.net
-208.99.83.40 cross-promotions.nutaku.net
-205.185.208.150 cdn-cross-promotions.nutaku.net
-66.254.114.210 smtps.nutaku.net
-208.99.64.43 access.nutaku.net
-208.99.64.43 www.access.nutaku.net
-205.185.208.150 cdn-dungeon-sluts.nutaku.net
-66.254.114.210 mxs.nutaku.net
-66.254.114.210 direct.nutaku.net
-66.254.114.210 internet.nutaku.net
-205.185.208.150 cdn-flowerknight.nutaku.net
-69.16.175.42 cdn.flowerknight.nutaku.net
-167.89.7.118 o1.default.nutaku.net
-10.122.88.88 dev-client.nutaku.net
-66.254.114.210 fkg-front.nutaku.net
-66.254.114.210 root.nutaku.net
-66.254.114.210 art.nutaku.net
-66.254.114.210 mobileapitest.nutaku.net
-66.254.114.210 dev5-mobileapitest.nutaku.net
-66.254.114.210 host.nutaku.net
-66.254.114.210 post.nutaku.net
-205.185.208.150 cdn-kingdom-of-lust.nutaku.net
-69.16.175.42 cdn.kingdom-of-lust.nutaku.net
-205.185.208.150 heroes-of-lust.nutaku.net
-66.254.114.210 mailout.nutaku.net
-66.254.114.210 waifu.nutaku.net
-205.185.208.150 pocket-waifu.nutaku.net
-208.99.75.62 stage-newtaku.nutaku.net
-66.254.114.210 mailsrv.nutaku.net
-205.185.216.10 sacred-sword-sfw.nutaku.net
-205.185.216.10 sacred-sword-nsfw.nutaku.net
-66.254.114.210 tw.nutaku.net
-66.254.114.210 ww.nutaku.net
-66.254.114.205 www.nutaku.net
-208.99.75.62 stg-www.nutaku.net
-66.254.114.210 httpswww.nutaku.net
-66.254.114.210 nutakuwww.nutaku.net
-66.254.114.210 mailx.nutaku.net
-66.254.114.210 mx.nutaku.net
-66.254.114.210 a.mx.nutaku.net
-66.254.114.210 box.nutaku.net
-66.254.114.210 relay.nutaku.net
-205.185.208.150 cdn-golden-spy.nutaku.net
-54.242.194.207 docs.cross-promotion.nutaku.net
-52.222.236.80 play.nutaku.net
-66.254.114.205 nutaku.net
-
 # [bangbros.com]
 199.167.65.1 images25.bangbros.com
 199.167.65.1 images26.bangbros.com
@@ -4645,13 +4473,6 @@
 
 66.254.109.5 join.familystrokes.com
 66.254.108.234 members.familystrokes.com
-
-# [data18.com]
-23.111.155.70 data18.com
-94.229.64.214 www.data18.com
-31.132.6.154 img.data18.com
-94.229.64.214 secure.data18.com
-31.132.6.150 ima1.data18.com
 
 # [mangago.me]
 172.67.72.115 openplay.mangago.me
@@ -5648,151 +5469,6 @@
 208.99.84.100 cdne-pics.youjizz.com
 208.99.84.116 cdne-mobile.youjizz.com
 
-# [imagefap.com]
-46.166.189.210 imagefap.com
-46.166.189.210 www.imagefap.com
-8.240.78.251 cdn.imagefap.com
-8.252.98.251 cdn.imagefap.com
-8.252.183.123 cdn.imagefap.com
-205.185.216.10 cdn.imagefap.com
-109.201.130.54 cache1.imagefap.com
-77.247.179.156 cdn-nl1.imagefap.com
-109.201.130.54 cache2.imagefap.com
-77.247.179.167 cdn-nl2.imagefap.com
-109.201.130.54 cache3.imagefap.com
-77.247.179.140 cdn-nl3.imagefap.com
-77.247.179.150 cdn-nl4.imagefap.com
-77.247.179.141 images4.imagefap.com
-85.159.232.147 cdn-nl5.imagefap.com
-77.247.179.131 beta.imagefap.com
-46.166.189.210 beta.imagefap.com
-109.201.130.55 pic.imagefap.com
-93.158.219.155 upload.imagefap.com
-109.201.130.55 pic-e.imagefap.com
-109.201.130.55 cache.imagefap.com
-77.247.179.134 chat-img.imagefap.com
-93.158.219.155 staging.imagefap.com
-77.247.179.134 streaming.imagefap.com
-205.185.216.10 cdnh.imagefap.com
-93.158.219.155 auth.imagefap.com
-85.17.52.221 mail.imagefap.com
-85.159.232.131 webmail.imagefap.com
-77.247.179.187 beta-origin.imagefap.com
-109.201.130.52 admin.imagefap.com
-109.201.130.56 up.imagefap.com
-109.201.130.56 uploader.imagefap.com
-85.159.232.131 mailfilter.imagefap.com
-109.201.130.55 images.imagefap.com
-64.71.179.13 cams.imagefap.com
-93.158.219.155 chat.imagefap.com
-109.201.130.52 adult.imagefap.com
-109.201.130.55 x.imagefap.com
-46.166.189.210 www10.imagefap.com
-46.166.189.210 www11.imagefap.com
-46.166.189.210 www1.imagefap.com
-46.166.189.210 www12.imagefap.com
-46.166.189.210 www2.imagefap.com
-46.166.189.210 beta13.imagefap.com
-46.166.189.210 www13.imagefap.com
-46.166.189.210 www3.imagefap.com
-46.166.189.210 www4.imagefap.com
-109.201.130.55 zip.imagefap.com
-
-# [moviefap.com]
-77.247.179.135 moviefap.com
-77.247.179.135 www.moviefap.com
-77.247.183.90 fck-c10.moviefap.com
-77.247.183.10 fck-c20.moviefap.com
-67.27.233.251 fck-cl20.moviefap.com
-77.247.180.24 fck-c30.moviefap.com
-8.241.89.123 fck-cl30.moviefap.com
-8.241.89.123 fck-cl40.moviefap.com
-77.247.183.81 fck-c01.moviefap.com
-8.241.89.123 fck-cl01.moviefap.com
-77.247.183.1 fck-c11.moviefap.com
-77.247.183.11 fck-c21.moviefap.com
-8.241.89.123 fck-cl21.moviefap.com
-77.247.180.67 fck-c31.moviefap.com
-67.27.233.251 fck-cl31.moviefap.com
-67.27.233.251 fck-cl41.moviefap.com
-77.247.183.2 fck-c12.moviefap.com
-77.247.183.18 fck-c22.moviefap.com
-8.241.89.123 fck-cl22.moviefap.com
-77.247.180.70 fck-c32.moviefap.com
-8.241.89.123 fck-cl32.moviefap.com
-77.247.183.83 fck-c03.moviefap.com
-77.247.183.3 fck-c13.moviefap.com
-77.247.180.1 fck-c23.moviefap.com
-8.241.89.123 fck-cl23.moviefap.com
-67.27.233.251 fck-cl33.moviefap.com
-77.247.183.4 fck-c14.moviefap.com
-77.247.180.4 fck-c24.moviefap.com
-8.241.89.123 fck-cl24.moviefap.com
-8.241.89.123 fck-cl34.moviefap.com
-77.247.183.85 fck-c05.moviefap.com
-77.247.183.5 fck-c15.moviefap.com
-77.247.180.7 fck-c25.moviefap.com
-8.241.89.123 fck-cl25.moviefap.com
-67.27.158.123 fck-cl35.moviefap.com
-77.247.183.86 fck-c06.moviefap.com
-77.247.183.6 fck-c16.moviefap.com
-77.247.180.10 fck-c26.moviefap.com
-67.27.158.123 fck-cl26.moviefap.com
-67.27.158.123 fck-cl36.moviefap.com
-77.247.183.69 smog-07.moviefap.com
-77.247.183.87 fck-c07.moviefap.com
-77.247.183.7 fck-c17.moviefap.com
-67.27.233.251 fck-cl17.moviefap.com
-77.247.180.13 fck-c27.moviefap.com
-8.241.89.123 fck-cl27.moviefap.com
-67.27.158.123 fck-cl37.moviefap.com
-77.247.183.88 fck-c08.moviefap.com
-67.27.158.123 fck-cl08.moviefap.com
-77.247.183.8 fck-c18.moviefap.com
-8.241.89.123 fck-cl18.moviefap.com
-77.247.180.18 fck-c28.moviefap.com
-8.241.89.123 fck-cl28.moviefap.com
-67.27.233.251 fck-cl38.moviefap.com
-77.247.180.9 cdn-09.moviefap.com
-77.247.183.89 fck-c09.moviefap.com
-8.241.89.123 fck-cl09.moviefap.com
-77.247.183.9 fck-c19.moviefap.com
-8.241.89.123 fck-cl19.moviefap.com
-77.247.180.21 fck-c29.moviefap.com
-8.241.89.123 fck-cl29.moviefap.com
-67.27.158.123 fck-cl39.moviefap.com
-77.247.178.234 pic.moviefap.com
-77.247.178.234 static.moviefap.com
-77.247.183.86 static.moviefap.com
-77.247.179.145 upload.moviefap.com
-205.185.216.10 img.moviefap.com
-77.247.183.68 cdn-fck.moviefap.com
-85.159.232.131 mail.moviefap.com
-77.247.176.122 webmail.moviefap.com
-77.247.179.135 m.moviefap.com
-77.247.179.135 premium.moviefap.com
-85.159.232.35 cdn.moviefap.com
-77.247.178.234 img-origin.moviefap.com
-77.247.179.170 video.moviefap.com
-77.247.179.135 player.moviefap.com
-77.247.183.16 cs.moviefap.com
-77.247.180.79 ts.moviefap.com
-77.247.183.16 support.moviefap.com
-77.247.183.69 smog-08.moviefap.com
-77.247.180.21 fck-ce20.moviefap.com
-77.247.183.85 fck-ce01.moviefap.com
-77.247.180.21 fck-ce22.moviefap.com
-77.247.180.21 fck-ce24.moviefap.com
-77.247.183.85 fck-ce08.moviefap.com
-77.247.183.7 fck-ce18.moviefap.com
-77.247.183.85 fck-ce09.moviefap.com
-77.247.183.7 fck-ce19.moviefap.com
-77.247.180.21 fck-ce26.moviefap.com
-77.247.180.21 fck-ce27.moviefap.com
-77.247.183.7 fck-ce17.moviefap.com
-77.247.180.21 fck-ce23.moviefap.com
-77.247.180.21 fck-ce25.moviefap.com
-77.247.180.21 fck-ce21.moviefap.com
 
 # [tnaflix.com]
 163.172.164.253 tnaflix.com
@@ -6133,19 +5809,6 @@
 
 
 
-# [fapforfun.com]
-104.21.38.109 fapforfun.net
-104.21.38.109 www.fapforfun.net
-192.254.149.119 autodiscover.fapforfun.net
-192.254.149.119 cpanel.fapforfun.net
-192.254.149.119 mail.fapforfun.net
-192.254.149.119 webdisk.fapforfun.net
-192.254.149.119 webmail.fapforfun.net
-104.21.38.109 fap.fapforfun.net
-104.21.38.109 www.fap.fapforfun.net
-192.254.149.119 ns1.fapforfun.net
-192.254.149.116 ns2.fapforfun.net
-
 # [video.fc2.com]
 104.244.99.124 video.fc2.com
 
@@ -6218,6 +5881,11 @@
 198.251.89.38 sukebei.nyaa.si
 185.178.208.182 www.nyaa.si
 185.178.208.182 nyaa.si
+
+
+
+
+
 
 
 64.79.105.131 forum.aznude.com
@@ -6382,11 +6050,6 @@
 172.67.213.161 javflv.onlyhgames.com
 172.67.213.161 www.javflv.onlyhgames.com
 
-158.69.250.74 s2.erome.com
-158.69.250.91 s1.erome.com
-158.69.250.92 s4.erome.com
-158.69.251.197 s3.erome.com
-
 104.26.7.100 raws.mangazuki.co
 
 # [lezhin.com]
@@ -6437,6 +6100,7 @@
 
 
 66.115.183.71 members.asiamoviepass.com
+
 
 
 104.37.176.1 thumbs-wbz-cdn.alljapanesepass.com
@@ -7426,17 +7090,6 @@
 151.101.248.193 blog.imgur.com
 104.16.51.111 help.imgur.com
 
-# [kimochi.info]
-172.64.201.32 kimochi.info
-172.64.201.32 www.kimochi.info
-172.64.200.32 kimochi.info
-172.64.200.32 www.kimochi.info
-172.64.137.13 kimochi.info
-172.64.137.13 www.kimochi.info
-172.64.200.32 mail.kimochi.info
-172.67.137.246 mail.kimochi.info
-172.64.200.32 images.kimochi.info
-
 # [codeply.com]
 3.219.96.23 blog.codeply.com
 23.21.67.157 s.codeply.com
@@ -7517,12 +7170,6 @@
 168.245.113.92 o10.mkt.fancentro.com
 168.245.107.50 o9.mkt.fancentro.com
 77.247.178.190 statz.fancentro.com
-
-158.69.250.91 s1.erome.com
-158.69.250.74 s2.erome.com
-158.69.251.197 s3.erome.com
-158.69.250.92 s4.erome.com
-104.21.235.105 s5.erome.com
 
 # [redgifs.com]
 104.18.5.207 thcf1.redgifs.com
@@ -9312,11 +8959,6 @@
 35.188.24.144 v.jkforum.net
 104.20.192.74 www.jkforum.net
 
-# [jvid.com]
-104.22.20.160 jvid.com
-130.211.31.244 img.jvid.com
-
-
 
 198.204.229.27 mail.undertow.club
 
@@ -9564,15 +9206,7 @@
 
 
 
-# [3xplanet.net]
-104.21.4.7 3xplanet.net
-104.21.4.7 cpanel.3xplanet.net
-172.67.131.111 www.3xplanet.net
-104.21.4.7 cpcalendars.3xplanet.net
-104.21.4.7 cpcontacts.3xplanet.net
-104.21.4.7 mail.3xplanet.net
-104.21.4.7 webdisk.3xplanet.net
-104.21.4.7 webmail.3xplanet.net
+
 
 
 # [avideo.com]
@@ -10468,9 +10102,6 @@
 # [erection-11.com]
 64.190.62.111 erection-11.com
 
-# [erostudio.org]
-50.31.160.158 erostudio.org
-
 # [ershy.com]
 162.144.2.163 www.about-webkinz.ershy.com
 162.144.2.163 about-webkinz.ershy.com
@@ -10756,9 +10387,6 @@
 199.59.242.153 ww25.lustgal.com
 103.224.182.224 lustgal.com
 
-# [mary18.net]
-91.195.240.68 mx1.mary18.net
-91.195.240.68 mary18.net
 
 # [memvideoshop.ws]
 64.70.19.203 memvideoshop.ws
@@ -11138,11 +10766,6 @@
 104.21.33.200 svscomics.com
 104.21.33.200 www.svscomics.com
 
-# [fapopedia.net]
-172.67.134.135 fapopedia.net
-172.67.134.135 www.fapopedia.net
-104.21.25.201 fapopedia.net
-104.21.25.201 www.fapopedia.net
 
 # [chobit.cc]
 151.101.14.132 file.chobit.cc
@@ -11568,10 +11191,6 @@
 216.239.38.21 www.60mins.online
 142.250.184.211 60mins.online
 142.250.184.211 www.60mins.online
-
-# [socceronline.me]
-45.178.5.205 socceronline.me
-45.178.5.205 www.socceronline.me
 
 # [sportshub.stream]
 172.67.206.95 sportshub.stream
@@ -12827,6 +12446,10 @@
 103.97.141.209 osler.idfl.idfl.info
 103.97.141.209 www.idflcoid.idfl.info
 
+# [ustvgo.tv]
+94.242.50.72 ustvgo.tv
+94.242.50.72 www.ustvgo.tv
+
 # [MOD One Line]
 151.101.53.140 v.redd.it
 151.101.53.140 s.reddit.com
@@ -12961,8 +12584,6 @@
 104.28.18.40 www.hbrowse.com
 104.27.175.188 mangakakalot.com
 104.27.175.188 www.mangakakalot.com
-104.24.124.27 animeron.org
-104.24.124.27 www.animeron.org
 199.101.134.46 playvids.com
 199.101.134.46 www.playvids.com
 199.101.134.46 accounts.playvids.com
@@ -13035,8 +12656,6 @@
 104.28.7.119 www.subdesu-h.net
 219.113.141.216 gyutto.com
 219.113.141.216 www.gyutto.com
-104.28.15.98 erogedownload.com
-104.28.15.98 www.erogedownload.com
 104.20.227.5 shadbase.com
 104.20.227.5 www.shadbase.com
 104.18.55.159 bioskopkeren.club
@@ -13064,8 +12683,6 @@
 104.25.113.17 www.poringa.net
 104.18.54.148 7mm.tv
 104.18.54.148 www.7mm.tv
-104.25.103.26 thefappening.pro
-104.25.103.26 www.thefappening.pro
 104.20.177.25 aznude.com
 104.20.177.25 www.aznude.com
 104.20.176.25 cdn.aznude.com
@@ -13224,8 +12841,6 @@
 204.15.8.10 m.myfreecams.com
 185.180.197.226 nudogram.com
 185.180.197.226 www.nudogram.com
-104.28.21.70 thefappeningblog.com
-104.28.21.70 www.thefappeningblog.com
 88.214.194.140 ancensored.com
 88.214.194.140 www.ancensored.com
 88.214.194.140 es.ancensored.com
@@ -13275,8 +12890,6 @@
 149.202.210.15 www.thatpervert.com
 104.27.167.155 celebsflash.com
 104.27.167.155 www.celebsflash.com
-198.27.67.122 erome.com
-198.27.67.122 www.erome.com
 104.24.109.14 studiofow.com
 104.24.109.14 www.studiofow.com
 104.26.7.100 mangazuki.co
@@ -13406,8 +13019,6 @@
 216.201.82.52 images.asiamoviepass.com
 216.201.82.48 webmasters.asiamoviepass.com
 216.201.82.48 join.asiamoviepass.com
-50.23.77.111 korea1818.com
-50.23.77.111 www.korea1818.com
 199.80.54.18 alljapanesepass.com
 199.80.54.18 www.alljapanesepass.com
 104.28.0.90 asianscandal.net
@@ -13486,12 +13097,8 @@
 50.23.253.253 webmail.jabcomix.com
 104.31.73.58 creampiesonly.com
 104.31.73.58 www.creampiesonly.com
-104.27.136.119 mov18plus.com
-104.27.136.119 www.mov18plus.com
 144.217.88.106 avli.me
 144.217.88.106 www.avli.me
-104.25.133.22 u18chan.com
-104.25.133.22 www.u18chan.com
 104.27.159.250 www.comdotgame.com
 104.27.159.250 comdotgame.com
 104.27.159.250 shs.comdotgame.com
@@ -13510,8 +13117,6 @@
 74.206.162.148 www.topwebmodels.com
 74.206.162.148 tour.topwebmodels.com
 74.206.162.148 members.topwebmodels.com
-104.24.107.241 instantfap.com
-104.24.107.241 www.instantfap.com
 104.27.146.208 7mm.tv
 104.27.146.208 www.7mm.tv
 163.172.20.146 file7.7mmtv.tv
@@ -13590,8 +13195,6 @@
 37.128.144.49 www.terk.nl
 104.27.168.213 psarips.one
 104.27.168.213 www.psarips.one
-104.25.72.6 fap-nation.com
-104.25.72.6 www.fap-nation.com
 104.28.0.11 camvault.xyz
 104.28.0.11 www.camvault.xyz
 104.28.0.11 static.camvault.xyz
@@ -13670,16 +13273,6 @@
 195.82.146.52 subs.rutracker.org
 31.192.113.173 fancentro.com
 31.192.113.173 www.fancentro.com
-198.27.67.122 erome.com
-198.27.67.122 www.erome.com
-104.21.235.106 s6.erome.com
-104.21.235.106 s7.erome.com
-104.21.235.106 s8.erome.com
-104.21.235.106 s9.erome.com
-104.21.235.106 s10.erome.com
-104.21.235.106 s11.erome.com
-104.21.235.106 s12.erome.com
-104.21.235.106 s13.erome.com
 66.199.190.206 zenra.net
 66.199.190.206 www.zenra.net
 104.26.9.236 dramanice.movie
@@ -13800,30 +13393,6 @@
 172.64.168.10 media.inhumanity.com
 172.64.168.10 static.inhumanity.com
 172.64.168.10 i.inhumanity.com
-104.21.4.7 3xplanet.com
-104.21.4.7 www.img.3xplanet.com
-104.21.4.7 www.update.3xplanet.com
-104.21.4.7 cpcalendars.3xplanet.com
-104.21.4.7 cpcontacts.3xplanet.com
-104.21.4.7 mail.3xplanet.com
-104.21.4.7 webdisk.3xplanet.com
-104.21.4.7 quangcaotanhung.3xplanet.com
-104.21.4.7 www.quangcaotanhung.3xplanet.com
-104.21.4.7 www.free.3xplanet.com
-104.21.4.7 www.download.3xplanet.com
-104.21.4.7 www.new.3xplanet.com
-104.21.4.7 www.recover.3xplanet.com
-104.21.4.7 www.cpanel.3xplanet.com
-104.28.23.16 img.3xplanet.com
-104.28.23.16 cpanel.3xplanet.com
-104.28.23.16 new.3xplanet.com
-104.28.23.16 recover.3xplanet.com
-104.28.23.16 dc-b3043972.3xplanet.com
-104.28.22.16 www.3xplanet.com
-104.28.22.16 update.3xplanet.com
-104.28.22.16 webmail.3xplanet.com
-104.28.22.16 free.3xplanet.com
-104.28.22.16 download.3xplanet.com
 104.27.206.92 ronaldo7.net
 104.27.206.92 www.ronaldo7.net
 104.27.206.92 ns1.ronaldo7.net
@@ -13864,19 +13433,11 @@
 59.106.25.10 flv.duga.jp
 104.27.181.38 fleshed.com
 104.27.181.38 www.fleshed.com
-35.241.42.255 staging001.jvid.com
-35.241.42.255 img.staging001.jvid.com
-104.22.21.160 www.jvid.com
-104.22.21.160 payment.jvid.com
-104.22.21.160 event.jvid.com
-104.22.21.160 support.jvid.com
 89.248.169.9 sys.undertow.club
 89.248.169.9 delta.undertow.club
 89.248.169.9 www.delta.undertow.club
 172.67.154.218 undertow.club
 172.67.154.218 www.undertow.club
-104.27.152.42 erocool.com
-104.27.152.42 www.erocool.com
 89.35.39.187 liveonscore.tv
 89.35.39.187 www.liveonscore.tv
 89.35.39.187 chat.liveonscore.tv
@@ -13889,7 +13450,5 @@
 191.209.68.200 megabooru.com
 191.209.68.200 www.megabooru.com
 191.209.68.200 img2.megabooru.com
-172.67.163.9 hypnohub.net
-172.67.163.9 www.hypnohub.net
 172.67.216.6 idlix.com
 172.67.216.6 www.idlix.com
