@@ -3,7 +3,7 @@
 # Project page: https://github.com/sekedus/project/tree/main/bebasid-adaway
 #
 # Name: [MOD One Line]
-# Latest update: 2022-03-18T22:11:30+08:00
+# Latest update: 2022-03-19T08:03:34+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
@@ -1634,11 +1634,6 @@
 172.67.195.13 anime-sharing.com
 104.21.49.218 torrent.anime-sharing.com
 
-# [nubiefilms.com]
-184.170.255.44 www.nubilefilms.com
-184.170.255.44 nubilefilms.com
-46.182.108.2 images.nubilefilms.com
-
 # [manhuascan.com]
 172.67.176.197 manhuascan.com
 172.67.176.197 www.manhuascan.com
@@ -1791,16 +1786,6 @@
 104.17.78.75 4channel.org
 104.225.112.136 ims.4channel.org
 104.225.112.136 136.112.225.104.ptr.anycast.net
-
-# [7mm.tv]
-104.18.39.251 7mmtv.tv  www.7mmtv.tv
-163.172.90.92 file.7mmtv.tv
-163.172.215.71 video.7mmtv.tv
-163.172.20.146 file2.7mmtv.tv
-163.172.45.107 file3.7mmtv.tv
-163.172.45.127 file4.7mmtv.tv
-195.154.113.42 file5.7mmtv.tv
-195.154.113.43 file6.7mmtv.tv
 
 # [desuarchive.org]
 104.24.126.53 desuarchive.org
@@ -4264,25 +4249,6 @@
 104.21.63.105 dev2.avideo.com
 104.21.63.105 dev.avideo.com
 104.21.63.105 git.avideo.com
-
-# [3xpla.net]
-104.21.233.223 www.3xpla.net
-104.21.233.223 update.3xpla.net
-104.21.233.223 3xpla.net
-104.21.233.224 cpanel.3xpla.net
-104.21.233.224 test.3xpla.net
-104.21.233.224 www.update.3xpla.net
-104.21.233.224 an-gallery.3xpla.net
-104.21.233.224 www.an-gallery.3xpla.net
-104.21.233.224 cpcalendars.3xpla.net
-104.21.233.224 cpcontacts.3xpla.net
-104.21.233.224 mail.3xpla.net
-104.21.233.224 webdisk.3xpla.net
-104.21.233.224 webmail.3xpla.net
-104.21.233.224 3xplanet.3xpla.net
-104.21.233.224 www.3xplanet.3xpla.net
-104.21.233.224 www.test.3xpla.net
-104.21.233.224 backup1.3xpla.net
 
 # [9anime.to]
 104.21.233.127 www1.9anime.to
@@ -7190,8 +7156,6 @@
 91.212.150.157 www.katcr.co
 104.20.43.57 8ch.net
 104.20.43.57 www.8ch.net
-104.18.54.148 7mm.tv
-104.18.54.148 www.7mm.tv
 104.236.82.224 hleecher.tk
 104.236.82.224 www.hleecher.tk
 104.18.60.143 gonewild.to
@@ -7381,22 +7345,6 @@
 185.97.32.49 files1.swfchan.com
 104.27.212.30 torrentdownloads.me
 104.27.212.30 www.torrentdownloads.me
-104.27.146.208 7mm.tv
-104.27.146.208 www.7mm.tv
-163.172.20.146 file7.7mmtv.tv
-163.172.20.146 file8.7mmtv.tv
-163.172.20.146 file9.7mmtv.tv
-163.172.20.146 file10.7mmtv.tv
-163.172.20.146 file11.7mmtv.tv
-163.172.20.146 file12.7mmtv.tv
-163.172.20.146 file13.7mmtv.tv
-163.172.20.146 file14.7mmtv.tv
-163.172.20.146 file15.7mmtv.tv
-163.172.20.146 file16.7mmtv.tv
-163.172.20.146 file17.7mmtv.tv
-163.172.20.146 file18.7mmtv.tv
-163.172.20.146 file19.7mmtv.tv
-163.172.20.146 file20.7mmtv.tv
 104.28.20.124 animeholics.org
 104.28.20.124 www.animeholics.org
 104.28.20.124 hentai.animeholics.org
