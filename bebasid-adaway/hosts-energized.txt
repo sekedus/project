@@ -3,7 +3,7 @@
 # Project page: https://github.com/sekedus/project/tree/main/bebasid-adaway
 #
 # Name: [MOD One Line]
-# Latest update: 2022-03-19T08:03:34+08:00
+# Latest update: 2022-03-20T08:27:58+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
@@ -1473,57 +1473,6 @@
 185.225.18.165 www.blog.isohunt.to
 185.225.18.165 www.openbay.isohunt.to
 
-# [donmai.us]
-104.26.10.39 raikou1.donmai.us
-104.26.10.39 raikou2.donmai.us
-172.67.70.99 raikou2.donmai.us
-104.26.11.39 raikou3.donmai.us
-104.26.10.39 raikou3.donmai.us
-172.67.70.99 raikou3.donmai.us
-104.26.11.39 raikou4.donmai.us
-104.26.10.39 raikou4.donmai.us
-104.26.11.39 shima.donmai.us
-104.26.10.39 shima.donmai.us
-104.26.10.39 kagamihara.donmai.us
-172.67.70.99 kagamihara.donmai.us
-172.67.70.99 sonohara.donmai.us
-104.26.10.39 sonohara.donmai.us
-172.67.70.99 hijiribe.donmai.us
-104.26.10.39 hijiribe.donmai.us
-104.26.11.39 hijiribe.donmai.us
-172.67.70.99 isshiki.donmai.us
-104.26.10.39 isshiki.donmai.us
-172.67.70.99 saitou.donmai.us
-104.26.10.39 saitou.donmai.us
-172.67.70.99 safebooru.donmai.us
-104.26.10.39 safebooru.donmai.us
-104.26.10.39 danbooru.donmai.us
-172.67.70.99 danbooru.donmai.us
-104.26.10.39 testbooru.donmai.us
-104.26.11.39 testbooru.donmai.us
-172.67.70.99 www.donmai.us
-104.26.10.39 www.donmai.us
-172.67.70.99 donmai.us
-104.26.10.39 donmai.us
-147.135.10.99 mail.donmai.us
-116.202.128.97 kinako.donmai.us
-147.135.4.108 inuyama.donmai.us
-104.26.10.39 korone.donmai.us
-147.135.10.99 oogaki.donmai.us
-104.26.10.39 cdn.donmai.us
-104.26.10.39 karasuma.donmai.us
-104.26.10.39 miura.donmai.us
-104.26.10.39 raikou2b.donmai.us
-104.26.10.39 benten.donmai.us
-104.26.10.39 matomo.donmai.us
-104.26.10.39 shiromeguri.donmai.us
-104.26.10.39 danbooru2.donmai.us
-104.26.10.39 raikou.donmai.us
-172.67.70.99 www.sonohara.donmai.us
-104.26.10.39 www.sonohara.donmai.us
-172.67.70.99 www.hijiribe.donmai.us
-104.26.10.39 www.hijiribe.donmai.us
-
 # [dmm.com]
 13.32.207.52 stat.i3.dmm.com
 52.85.144.49 mvno.dmm.com
@@ -1796,16 +1745,6 @@
 172.67.131.22 www.desuarchive.org
 104.21.69.184 desuarchive.org
 104.21.69.184 www.desuarchive.org
-
-# [japaneseasmr.com]
-172.64.199.11 japaneseasmr.com
-172.64.199.11 www.japaneseasmr.com
-162.159.137.85 japaneseasmr.com
-162.159.137.85 www.japaneseasmr.com
-162.159.138.85 japaneseasmr.com
-162.159.138.85 www.japaneseasmr.com
-172.64.199.11 sfw.japaneseasmr.com
-162.159.137.85 mail.japaneseasmr.com
 
 # [hdstreams.club]
 104.28.26.10 hdstreams.club
@@ -2440,34 +2379,9 @@
 104.27.152.155 katcr.to
 104.31.16.3 www.katcr.to
 
-# [camvideos.me]
-104.26.9.144 camvideos.me
-104.26.8.144 www.camvideos.me
-
 # [isekaiscan.com]
 104.24.113.189 isekaiscan.com
 104.27.148.216 www.isekaiscan.com
-
-# [cowmm.com]
-104.31.81.217 www.cowmm.com
-172.67.167.53 cowmm.com
-
-# [toonily.com]
-104.26.13.191 cdn.toonily.com
-104.26.12.191 cdn.toonily.com
-104.26.13.191 www.toonily.com
-104.26.12.191 www.toonily.com
-172.67.72.131 www.toonily.com
-104.26.13.191 toonily.com
-172.67.72.131 toonily.com
-104.26.12.191 toonily.com
-159.89.98.98 status.toonily.com
-104.26.12.191 cdn3.toonily.com
-159.89.98.98 ad.toonily.com
-104.26.12.191 cdn2.toonily.com
-172.67.72.131 pnl.toonily.com
-159.89.98.98 webmail.toonily.com
-172.67.72.131 t3h3.toonily.com
 
 # [ryuublogger.com]
 172.217.23.179 www.ryuublogger.com
@@ -4072,25 +3986,12 @@
 54.229.83.48 data-seed-prebsc-2-s2.binance.org
 3.217.23.67 data-seed-prebsc-2-s3.binance.org
 
-# [fleshed.com]
-172.67.215.81 media.fleshed.com
-151.139.128.11 mediav.fleshed.com
-
 # [jkforum.net]
 172.67.19.226 jkforum.net
 130.211.31.66 pg2dhpc3p5ec22g3.jkforum.net
 167.89.17.90 o1.mm.jkforum.net
 35.188.24.144 v.jkforum.net
 104.20.192.74 www.jkforum.net
-198.204.229.27 mail.undertow.club
-
-# [webtoon.xyz]
-172.67.144.247 www.webtoon.xyz
-51.161.115.81 mail.webtoon.xyz
-104.21.95.129 webtoon.xyz
-172.67.144.247 test.webtoon.xyz
-104.21.0.209 cdn1.webtoon.xyz
-104.21.95.129 cdn2.webtoon.xyz
 
 # [bybit.com]
 23.54.18.161 api2.bybit.com
@@ -4360,28 +4261,6 @@
 172.67.207.85 www6.gogoanime.pro
 104.21.85.159 www6.gogoanime.pro
 
-# [graphis.ne.jp]
-115.166.150.40 file.graphis.ne.jp
-115.166.151.29 mail.graphis.ne.jp
-115.166.150.4 gals.graphis.ne.jp
-115.166.150.39 www.graphis.ne.jp
-115.166.150.39 graphis.ne.jp
-115.166.150.40 data.graphis.ne.jp
-115.166.150.4 dvd.graphis.ne.jp
-115.166.150.73 members.graphis.ne.jp
-211.13.210.123 member.graphis.ne.jp
-115.166.151.29 lists.graphis.ne.jp
-
-# [gravuretube.net]
-104.21.19.120 cpanel.gravuretube.net
-104.21.19.120 gravuretube.net
-95.211.171.131 mail.gravuretube.net
-95.211.171.131 webdisk.gravuretube.net
-95.211.171.131 webmail.gravuretube.net
-172.67.186.37 www.gravuretube.net
-104.21.19.120 cpcalendars.gravuretube.net
-104.21.19.120 cpcontacts.gravuretube.net
-
 # [raidforums.com]
 172.67.73.63 db.raidforums.com
 104.26.12.239 zoom.raidforums.com
@@ -4434,10 +4313,6 @@
 # [s2dfree.nl]
 104.21.45.177 www.s2dfree.nl
 104.21.45.177 s2dfree.nl
-
-# [hitprn.com]
-104.21.16.20 hitprn.com
-172.67.165.246 www.hitprn.com
 
 # [sg.apexmc.co]
 139.99.62.142 sg.apexmc.co
@@ -4523,17 +4398,6 @@
 172.67.140.27 openloadmov.net
 104.21.73.39 www.openloadmov.net
 
-# [idolpixels.net]
-104.21.234.51 www.idolpixels.net
-104.21.234.50 www.idolpixels.net
-104.21.234.51 idolpixels.net
-62.210.217.112 mail.idolpixels.net
-104.21.234.51 webmail.idolpixels.net
-104.21.234.50 webmail.idolpixels.net
-104.16.41.196 live.idolpixels.net
-104.21.234.50 shop.idolpixels.net
-62.210.217.112 62-210-217-112.rev.poneytelecom.eu
-
 # [f1livegp.me]
 104.21.49.43 www.f1livegp.me
 172.67.158.207 www.f1livegp.me
@@ -4554,13 +4418,6 @@
 162.219.178.134 olympicstreams.me
 45.178.5.228 olympicstreams.me
 162.219.178.134 www.olympicstreams.me
-
-# [1mov.net]
-185.73.220.218 www.1mov.net
-185.73.223.1 cdn1.1mov.net
-185.73.223.1 cdn3.1mov.net
-185.73.223.1 cdn2.1mov.net
-185.73.220.218 1mov.net
 
 # [alltop.biz]
 80.237.138.5 mx0.alltop.biz
@@ -4849,9 +4706,6 @@
 162.144.2.163 mail.ershy.com
 162.144.2.163 ershy.com
 
-# [findnudists.com]
-3.232.205.82 findnudists.com
-
 # [firelols.com]
 3.223.115.185 firelols.com
 
@@ -4879,10 +4733,6 @@
 64.190.62.111 www.freemodels.info
 64.190.62.111 freemodels.info
 
-# [ggspy.com]
-45.38.243.122 www.ggspy.com
-45.38.243.122 ggspy.com
-
 # [glamourtop.com]
 52.58.78.16 www.glamourtop.com
 52.58.78.16 glamourtop.com
@@ -4903,11 +4753,6 @@
 # [heaven-portal.com]
 45.43.18.204 pretty.heaven-portal.com
 45.43.18.204 heaven-portal.com
-
-# [hiddenlol.com]
-104.21.233.242 www.hiddenlol.com
-104.21.233.241 m.hiddenlol.com
-104.21.233.241 hiddenlol.com
 
 # [hilola.com]
 65.254.227.224 www.hilola.com
@@ -4934,10 +4779,6 @@
 # [jokerpics.com]
 184.168.131.241 www.jokerpics.com
 184.168.131.241 jokerpics.com
-
-# [kkchatten.com]
-18.198.217.250 www.kkchatten.com
-18.198.217.250 kkchatten.com
 
 # [leyka.com]
 3.223.115.185 leyka.com
@@ -5056,10 +4897,6 @@
 # [montspace.com]
 3.223.115.185 montspace.com
 
-# [moregal.com]
-142.234.43.12 www.moregal.com
-142.234.43.12 moregal.com
-
 # [most-talented.com]
 162.215.252.175 autodiscover.most-talented.com
 162.215.252.175 cpanel.most-talented.com
@@ -5167,10 +5004,6 @@
 68.65.122.10 mail.steve-erwin.com
 162.255.119.254 steve-erwin.com
 
-# [suchki.net]
-141.0.173.168 www.suchki.net
-141.0.173.168 suchki.net
-
 # [sundoll.info]
 199.115.115.102 hostmaster.sundoll.info
 199.59.242.153 ww1.sundoll.info
@@ -5209,15 +5042,6 @@
 80.91.177.102 tv.tv-project.com
 206.81.28.160 tv-project.com
 
-# [twinkgallerypost.com]
-104.21.3.62 www.twinkgallerypost.com
-67.205.41.132 twinkgallerypost.com
-
-# [ultramale.net]
-204.155.146.145 dc-d9c988517cc3.ultramale.net
-104.21.233.175 www.ultramale.net
-104.21.233.176 ultramale.net
-
 # [vanbokhorst.nl]
 81.95.97.99 autodiscover.vanbokhorst.nl
 81.95.101.5 www.vanbokhorst.nl
@@ -5249,30 +5073,6 @@
 
 # [zubr.biz]
 91.234.35.150 zubr.biz
-
-# [hiperdex.com]
-172.67.74.220 www.hiperdex.com
-172.67.74.220 hiperdex.com
-104.26.10.19 cdn.hiperdex.com
-104.26.10.19 beta.hiperdex.com
-104.26.10.19 adb.hiperdex.com
-104.26.10.19 raw.hiperdex.com
-
-# [chobit.cc]
-151.101.14.132 file.chobit.cc
-163.171.140.204 img.chobit.cc
-52.69.90.52 stg.chobit.cc
-35.75.122.124 info.chobit.cc
-13.231.82.190 info.chobit.cc
-18.180.131.171 dev.chobit.cc
-3.115.62.141 chobit.cc
-3.115.62.141 www.chobit.cc
-52.198.57.163 chobit.cc
-52.198.57.163 www.chobit.cc
-52.198.57.163 ec2-52-198-57-163.ap-northeast-1.compute.amazonaws.com
-52.69.90.52 ec2-52-69-90-52.ap-northeast-1.compute.amazonaws.com
-13.231.82.190 ec2-13-231-82-190.ap-northeast-1.compute.amazonaws.com
-18.180.131.171 ec2-18-180-131-171.ap-northeast-1.compute.amazonaws.com
 
 # [neonime.site]
 172.67.196.41 neonime.site
@@ -5716,36 +5516,6 @@
 104.26.4.102 mail.manga1000.com
 104.26.4.102 test.manga1000.com
 
-# [tktube.com]
-104.21.66.238 tktube.com
-104.21.66.238 www.tktube.com
-172.64.162.26 tktube.com
-172.64.162.26 www.tktube.com
-172.67.165.221 tktube.com
-172.67.165.221 www.tktube.com
-172.67.165.221 upload.tktube.com
-
-# [jable.tv]
-104.27.195.88 jable.tv
-104.27.195.88 www.jable.tv
-104.27.195.88 en.jable.tv
-104.27.194.88 en.jable.tv
-104.27.195.88 jp.jable.tv
-104.27.194.88 jp.jable.tv
-104.27.195.88 assets.jable.tv
-104.27.194.88 assets.jable.tv
-51.161.118.150 assetscdn2.jable.tv
-51.222.43.21 assetscdn.jable.tv
-104.27.194.88 hook.jable.tv
-167.114.117.40 cdn0.jable.tv
-51.222.43.21 cdn1.jable.tv
-167.114.117.40 upload.jable.tv
-104.27.194.88 static.jable.tv
-104.27.194.88 smart.jable.tv
-104.27.194.88 test.jable.tv
-51.222.43.21 cdnx1.jable.tv
-51.222.43.21 www.cdnx1.jable.tv
-
 # [isohunt.to]
 185.225.18.165 isohunt.to
 185.225.18.165 www.isohunt.to
@@ -5755,11 +5525,6 @@
 104.21.19.102 www.indoxxi.com
 172.67.185.192 indoxxi.com
 172.67.185.192 www.indoxxi.com
-
-# [rivalry.com]
-104.18.4.133 rivalry.com
-104.18.4.133 www.rivalry.com
-104.18.4.133 datasheets.scbt.com
 
 # [ghost.org]
 104.21.40.115 static.ghost.org
@@ -5875,14 +5640,6 @@
 185.233.186.104 ftp.cricfree.live
 185.233.186.104 smtp.cricfree.live
 185.233.186.104 hostmaster.cricfree.live
-
-# [chinababe.net]
-104.21.62.181 chinababe.net
-104.21.62.181 www.chinababe.net
-104.21.62.181 ww1.chinababe.net
-172.67.138.2 chinababe.net
-172.67.138.2 www.chinababe.net
-172.67.138.2 ww1.chinababe.net
 
 # [leakedbb.com]
 104.26.6.13 leakedbb.com
@@ -6033,39 +5790,13 @@
 172.67.213.64 worldsrc.net
 172.67.213.64 www.worldsrc.net
 
-# [animopron.com]
-104.26.6.238 animopron.com
-104.26.6.238 www.animopron.com
-172.67.74.74 animopron.com
-172.67.74.74 www.animopron.com
-104.26.7.238 mail.animopron.com
-172.67.74.74 mail.animopron.com
-172.67.74.74 cpanel.animopron.com
-172.67.74.74 cpcalendars.animopron.com
-172.67.74.74 cpcontacts.animopron.com
-172.67.74.74 webdisk.animopron.com
-172.67.74.74 webmail.animopron.com
-
 # [movies123.show]
 104.21.85.65 movies123.show
 104.21.85.65 www.movies123.show
 
-# [simontok.vip]
-172.67.189.7 simontok.vip
-172.67.189.7 www.simontok.vip
-
 # [score808.com]
 47.242.65.106 score808.com
 47.242.65.106 www.score808.com
-
-# [cumfacegenerator.com]
-104.21.95.135 cumfacegenerator.com
-104.21.95.135 www.cumfacegenerator.com
-172.67.144.253 cumfacegenerator.com
-172.67.144.253 www.cumfacegenerator.com
-104.21.95.135 mail.cumfacegenerator.com
-172.67.144.253 mail.cumfacegenerator.com
-173.45.173.75 dc-d34c9a9a217b.cumfacegenerator.com
 
 # [nontongp.com]
 104.21.55.126 nontongp.com
@@ -6078,38 +5809,6 @@
 104.21.30.42 www.otakudesu.vip
 94.237.78.13 otakudesu.vip
 94.237.78.13 www.otakudesu.vip
-
-# [av01.tv]
-172.67.69.56 av01.tv
-172.67.69.56 www.av01.tv
-104.26.2.106 av01.tv
-104.26.2.106 www.av01.tv
-104.26.3.106 av01.tv
-104.26.3.106 www.av01.tv
-54.39.243.86 cdn.av01.tv
-54.39.243.91 cdn.av01.tv
-51.79.19.197 cdn.av01.tv
-149.56.240.217 cdn.av01.tv
-93.186.202.45 img1.av01.tv
-51.15.10.123 img1.av01.tv
-51.15.10.123 static.av01.tv
-93.186.202.45 static.av01.tv
-217.79.181.42 static.av01.tv
-172.106.10.238 h-charles-cdn.av01.tv
-172.106.200.174 h-boy-cdn.av01.tv
-172.106.200.162 h-adam-cdn.av01.tv
-45.35.33.242 hot.av01.tv
-172.67.69.56 en.av01.tv
-172.67.69.56 media.av01.tv
-172.67.69.56 jp.av01.tv
-104.26.3.106 staging.av01.tv
-217.79.181.42 cdn-static.av01.tv
-51.79.19.197 cdn-d.av01.tv
-
-# [iw01.xyz]
-104.21.233.207 iw01.xyz
-104.21.233.207 www.iw01.xyz
-104.21.233.208 img1.iw01.xyz
 
 # [givemenbastreams.com]
 104.21.235.146 givemenbastreams.com
@@ -6136,10 +5835,6 @@
 172.67.134.245 score.nbabite.com
 172.67.134.245 redditt.nbabite.com
 172.67.138.218 red.nbabite.com
-
-# [slotlights1x.com]
-5.61.56.139 slotlights1x.com
-5.61.56.139 www.slotlights1x.com
 
 # [huobi.com]
 104.18.25.210 huobi.com
@@ -6221,18 +5916,6 @@
 18.179.190.111 waihui.huobi.com
 104.18.25.210 beta.huobi.com
 18.179.190.111 dev.huobi.com
-
-# [virtamate.com]
-67.227.250.187 virtamate.com
-67.227.250.187 www.virtamate.com
-67.227.250.187 hub.virtamate.com
-195.181.175.46 apidoc.virtamate.com
-185.59.220.17 hubcdn.virtamate.com
-67.227.250.187 clouddedicatedserver.virtamate.com
-67.227.250.187 webdev.virtamate.com
-195.181.174.6 cdn.virtamate.com
-195.181.175.55 s3cdn.virtamate.com
-67.227.250.187 forum.virtamate.com
 
 # [fmovies.name]
 172.67.198.245 fmovies.name
@@ -6331,10 +6014,6 @@
 185.178.208.149 www.noxx.is
 185.178.208.149 server2.noxx.is
 
-# [slimewave.com]
-185.155.128.24 slimewave.com
-185.155.128.24 www.slimewave.com
-
 # [weakstreams.com]
 104.21.233.163 weakstreams.com
 104.21.233.163 www.weakstreams.com
@@ -6361,14 +6040,6 @@
 172.67.68.41 cdn.mangahub.io
 157.90.245.4 ads.mangahub.io
 157.90.245.4 beta.mangahub.io
-
-# [micmicidol.com]
-172.67.151.253 micmicidol.com
-172.67.151.253 www.micmicidol.com
-104.21.48.132 micmicidol.com
-104.21.48.132 www.micmicidol.com
-104.21.48.132 korea.micmicidol.com
-104.21.48.132 model.micmicidol.com
 
 # [mangaowl.net]
 172.67.71.136 mangaowl.net
@@ -6745,12 +6416,6 @@
 94.242.50.72 ustvgo.tv
 94.242.50.72 www.ustvgo.tv
 
-# [pasukankakek.fun]
-2.57.90.16 pasukankakek.fun
-2.57.90.16 www.pasukankakek.fun
-142.250.184.211 pasukankakek.fun
-142.250.184.211 www.pasukankakek.fun
-
 # [60fps.xyz]
 172.67.184.122 60fps.xyz
 172.67.184.122 www.60fps.xyz
@@ -7080,24 +6745,14 @@
 198.98.54.92 webmaster.yande.re
 72.11.139.6 generic.yande.re
 72.11.139.6 imouto.yande.re
-104.25.226.38 tanix.net
-104.25.226.38 www.tanix.net
 192.0.79.34 heavy.com
 192.0.79.34 www.heavy.com
-104.27.137.67 dl8x.com
-104.27.137.67 www.dl8x.com
-153.122.55.127 complets.co.jp
-153.122.55.127 www.complets.co.jp
 104.28.14.80 yuuk.net
 104.28.14.80 www.yuuk.net
-61.196.18.129 s1s1s1.com
-61.196.18.129 www.s1s1s1.com
 23.130.192.131 wetmelon.com
 23.130.192.131 www.wetmelon.com
 104.17.127.32 2chan.net
 104.17.127.32 www.2chan.net
-104.31.2.165 thiendia.com
-104.31.2.165 www.thiendia.com
 88.80.28.8 swfchan.com
 88.80.28.8 www.swfchan.com
 210.134.61.239 mangag.com
@@ -7125,11 +6780,6 @@
 202.61.65.55 www.m88.com
 104.24.29.20 asianbookie.com
 104.24.29.20 www.asianbookie.com
-216.18.168.66 tube8.com
-216.18.168.66 www.tube8.com
-216.18.168.66 jp.tube8.com
-216.18.168.66 de.tube8.com
-216.18.168.66 es.tube8.com
 104.28.20.122 hakihome.com
 104.28.20.122 www.hakihome.com
 104.24.113.61 imgchili.net
@@ -7144,14 +6794,10 @@
 216.172.97.222 www.hongfire.com
 104.28.7.119 subdesu-h.net
 104.28.7.119 www.subdesu-h.net
-219.113.141.216 gyutto.com
-219.113.141.216 www.gyutto.com
 104.18.55.159 bioskopkeren.club
 104.18.55.159 www.bioskopkeren.club
 82.118.242.41 yourserie.com
 82.118.242.41 www.yourserie.com
-104.25.86.27 megamich.com
-104.25.86.27 www.megamich.com
 91.212.150.157 katcr.co
 91.212.150.157 www.katcr.co
 104.20.43.57 8ch.net
@@ -7164,14 +6810,8 @@
 104.28.27.244 www.gonewild.co
 104.28.17.233 xbreezy.co
 104.28.17.233 www.xbreezy.co
-67.205.25.100 littlewhitebutterflies.co
-67.205.25.100 www.littlewhitebutterflies.co
 104.25.124.36 goodmanga.net
 104.25.124.36 www.goodmanga.net
-61.196.18.129 ideapocket.com
-61.196.18.129 www.ideapocket.com
-61.196.18.151 wanz-factory.com
-61.196.18.151 www.wanz-factory.com
 195.154.187.16 300mbfilms.org
 195.154.187.16 www.300mbfilms.org
 104.31.76.51 xdezire.com
@@ -7222,35 +6862,6 @@
 160.16.78.98 mb.stg.nijie.info
 209.54.51.89 mangagamer.com
 209.54.51.89 www.mangagamer.com
-64.187.151.194 tokyomotion.net
-64.187.151.194 www.tokyomotion.net
-64.187.150.107 www1.tokyomotion.net
-64.187.150.107 www2.tokyomotion.net
-64.187.150.107 www3.tokyomotion.net
-64.187.150.107 www4.tokyomotion.net
-64.187.150.107 www5.tokyomotion.net
-64.187.150.107 www6.tokyomotion.net
-64.187.150.107 www7.tokyomotion.net
-64.187.150.107 www8.tokyomotion.net
-64.187.150.107 www9.tokyomotion.net
-64.187.150.107 www10.tokyomotion.net
-64.187.150.107 www11.tokyomotion.net
-64.187.150.107 www12.tokyomotion.net
-64.187.150.107 www13.tokyomotion.net
-64.187.150.107 www14.tokyomotion.net
-64.187.150.107 www15.tokyomotion.net
-64.187.150.107 www16.tokyomotion.net
-64.187.150.107 www17.tokyomotion.net
-64.187.150.107 www18.tokyomotion.net
-64.187.150.107 www19.tokyomotion.net
-64.187.150.107 www20.tokyomotion.net
-64.187.150.107 www21.tokyomotion.net
-64.187.150.107 www22.tokyomotion.net
-64.187.150.107 www23.tokyomotion.net
-64.187.150.107 www24.tokyomotion.net
-64.187.150.107 www25.tokyomotion.net
-64.187.150.107 www26.tokyomotion.net
-64.187.150.107 www27.tokyomotion.net
 138.201.226.141 anime-pictures.net
 138.201.226.141 www.anime-pictures.net
 104.27.167.155 celebsflash.com
@@ -7263,8 +6874,6 @@
 172.217.6.51 ors-renders-ero.animemeeting.com
 198.252.105.94 moviedetector.me
 198.252.105.94 www.moviedetector.me
-104.31.79.222 nukemanga.com
-104.31.79.222 www.nukemanga.com
 54.65.215.29 enty.jp
 54.65.215.29 www.enty.jp
 104.28.6.40 notsfw.to
@@ -7322,14 +6931,10 @@
 104.22.40.215 i8.mangareader.net
 104.18.42.220 embed.media
 104.18.42.220 www.embed.media
-67.205.57.218 r34anim.com
-67.205.57.218 www.r34anim.com
 104.31.17.3 limetorrents.cc
 104.31.17.3 limetorrents.cc
 104.24.106.40 xkorean.biz
 104.24.106.40 www.xkorean.biz
-184.168.131.241 excogi.com
-184.168.131.241 www.excogi.com
 104.20.131.131 verystream.com
 104.20.131.131 www.verystream.com
 192.0.78.12 omochikaeri.wordpress.com
@@ -7354,10 +6959,6 @@
 104.26.12.242 cdn.fbs.com
 46.28.207.158 999dice.com
 46.28.207.158 www.999dice.com
-157.7.107.108 seiya-saiga.com
-157.7.107.108 www.seiya-saiga.com
-82.221.105.23 minnano-av.com
-82.221.105.23 www.minnano-av.com
 185.100.87.40 torrentgalaxy.to
 185.100.87.40 www.torrentgalaxy.to
 64.62.198.195 toomics.com
@@ -7383,8 +6984,6 @@
 104.27.150.41 api.kshow123.net
 104.27.150.41 api2.kshow123.net
 104.27.150.41 load.kshow123.net
-104.31.88.181 openloadpro.com
-104.31.88.181 www.openloadpro.com
 104.27.168.213 psarips.one
 104.27.168.213 www.psarips.one
 104.18.35.212 samehada.tv
@@ -7424,8 +7023,6 @@
 5.182.211.50 www.z-lib.org
 5.182.211.50 singlelogin.org
 5.182.211.50 www.singlelogin.org
-104.31.94.44 nijicollage.xyz
-104.31.94.44 www.nijicollage.xyz
 104.27.207.92 watchasian.to
 104.27.207.92 www.watchasian.to
 104.27.207.92 www4.watchasian.to
@@ -7505,8 +7102,6 @@
 104.18.51.201 www3.fastdrama.me
 104.18.51.201 images.fastdrama.me
 104.18.51.201 player.fastdrama.me
-217.160.0.140 simonbolz.com
-217.160.0.140 www.simonbolz.com
 104.27.206.92 ronaldo7.net
 104.27.206.92 www.ronaldo7.net
 104.27.206.92 ns1.ronaldo7.net
@@ -7528,13 +7123,6 @@
 95.131.68.14 www.peacetv.tv
 95.131.68.14 mail.peacetv.tv
 95.131.68.14 ftp.peacetv.tv
-104.27.181.38 fleshed.com
-104.27.181.38 www.fleshed.com
-89.248.169.9 sys.undertow.club
-89.248.169.9 delta.undertow.club
-89.248.169.9 www.delta.undertow.club
-172.67.154.218 undertow.club
-172.67.154.218 www.undertow.club
 104.27.152.42 erocool.com
 104.27.152.42 www.erocool.com
 89.35.39.187 liveonscore.tv
@@ -7542,7 +7130,5 @@
 89.35.39.187 chat.liveonscore.tv
 104.18.44.190 beinmatch.tv
 104.18.44.190 www.beinmatch.tv
-64.187.150.197 tokyomotion.net
-64.187.150.197 www.tokyomotion.net
 172.67.216.6 idlix.com
 172.67.216.6 www.idlix.com
