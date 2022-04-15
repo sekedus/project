@@ -2,7 +2,7 @@
 # Hosts modified by Sekedus
 # Project page: https://github.com/sekedus/project/tree/main/bebasid-adaway
 #
-# Latest update: 2022-04-16T07:02:03+08:00
+# Latest update: 2022-04-16T07:28:20+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
@@ -3007,34 +3007,6 @@
 104.21.235.46 keruberosu.mangadex.com
 104.21.235.46 fuyu.mangadex.com
 
-# [hanime.tv]
-172.64.109.19 player.hanime.tv
-172.64.108.19 members.hanime.tv
-172.64.108.19 www.hanime.tv
-172.64.108.19 hanime.tv
-172.64.108.19 search.hanime.tv
-172.64.108.19 hr.hanime.tv
-172.64.108.19 ark.hanime.tv
-172.64.108.19 uploads.hanime.tv
-172.64.108.19 cdn.hanime.tv
-172.64.108.19 mods.hanime.tv
-172.64.108.19 mindgeek-dashboard.hanime.tv
-172.64.108.19 vip.hanime.tv
-172.64.108.19 live.hanime.tv
-172.64.108.19 www.live.hanime.tv
-172.64.108.19 oberon.hanime.tv
-172.64.108.19 m.hanime.tv
-172.64.108.19 tapi.hanime.tv
-172.64.108.19 htv3.hanime.tv
-172.64.108.19 hw.hanime.tv
-172.64.108.19 weeb.hanime.tv
-172.64.108.19 player2.hanime.tv
-172.64.108.19 player3.hanime.tv
-172.67.169.86 search.htv-services.com
-172.67.169.86 uploader.htv-services.com
-104.21.87.103 www.htv-services.com
-104.21.87.103 htv-services.com
-
 # [asianbookie.com]
 104.24.29.20 asianbookie.com
 104.24.29.20 www.asianbookie.com
@@ -3242,59 +3214,6 @@
 138.201.226.141 anime-pictures.net
 138.201.226.141 www.anime-pictures.net
 
-# [onlyhgames.com]
-94.242.61.143 onlyhgames.com
-94.242.61.143 www.onlyhgames.com
-172.67.213.161 onlyhgames.com
-172.67.213.161 www.onlyhgames.com
-94.242.61.143 webdisk.onlyhgames.com
-94.242.61.143 dl.onlyhgames.com
-94.242.61.143 www.dl.onlyhgames.com
-104.21.16.149 dl.onlyhgames.com
-104.21.16.149 www.dl.onlyhgames.com
-94.242.61.143 cpanel.onlyhgames.com
-94.242.61.143 mail.onlyhgames.com
-94.242.61.143 webmail.onlyhgames.com
-94.242.61.143 www.onlyhgames.com
-94.242.61.143 j4vyou.onlyhgames.com
-94.242.61.143 www.j4vyou.onlyhgames.com
-94.242.61.143 test.onlyhgames.com
-94.242.61.143 www.test.onlyhgames.com
-94.242.61.143 redvids.onlyhgames.com
-94.242.61.143 www.redvids.onlyhgames.com
-94.242.61.143 cpcalendars.onlyhgames.com
-94.242.61.143 cpcontacts.onlyhgames.com
-94.242.61.143 oapk.net.onlyhgames.com
-94.242.61.143 www.oapk.net.onlyhgames.com
-172.67.213.161 review.onlyhgames.com
-172.67.213.161 www.review.onlyhgames.com
-172.67.213.161 forum.onlyhgames.com
-172.67.213.161 go.onlyhgames.com
-172.67.213.161 v18share.onlyhgames.com
-172.67.213.161 www.v18share.onlyhgames.com
-172.67.213.161 ohmanga.onlyhgames.com
-172.67.213.161 www.ohmanga.onlyhgames.com
-172.67.213.161 autodiscover.onlyhgames.com
-172.67.213.161 www.forum.onlyhgames.com
-172.67.213.161 onlyhseries.onlyhgames.com
-172.67.213.161 www.onlyhseries.onlyhgames.com
-172.67.213.161 talesp.onlyhgames.com
-172.67.213.161 www.talesp.onlyhgames.com
-172.67.213.161 n.onlyhgames.com
-172.67.213.161 www.n.onlyhgames.com
-172.67.213.161 img.onlyhgames.com
-172.67.213.161 www.img.onlyhgames.com
-172.67.213.161 javflv.onlyhgames.com
-172.67.213.161 www.javflv.onlyhgames.com
-
-# [erome.com]
-198.27.67.122 erome.com
-198.27.67.122 www.erome.com
-158.69.250.74 s2.erome.com
-158.69.250.91 s1.erome.com
-158.69.250.92 s4.erome.com
-158.69.251.197 s3.erome.com
-
 # [thisvid.com]
 185.56.235.4 thisvid.com
 185.56.235.4 www.thisvid.com
@@ -3406,10 +3325,6 @@
 74.117.179.56 join.alljapanesepass.com
 199.80.54.18 m.alljapanesepass.com
 
-# [asianscandal.net]
-104.28.0.90 asianscandal.net
-104.28.0.90 www.asianscandal.net
-
 # [embed.media]
 104.18.42.220 embed.media
 104.18.42.220 www.embed.media
@@ -3432,35 +3347,6 @@
 # [limetorrents.cc]
 104.31.17.3 limetorrents.cc
 104.31.17.3 limetorrents.cc
-
-# [sxyprn.com]
-104.21.58.198 sxyprn.com
-104.21.58.198 www.sxyprn.com
-172.67.172.199 sxyprn.com
-172.67.172.199 www.sxyprn.com
-172.67.207.58 sxyprn.com
-172.67.207.58 www.sxyprn.com
-
-# [betradar.com]
-3.121.0.67 betradar.com
-3.121.0.67 www.betradar.com
-54.173.37.82 cs.betradar.com
-91.201.212.177 in.betradar.com
-91.201.213.160 mts.betradar.com
-
-# [bet365.com]
-5.226.176.16 bet365.com
-5.226.176.16 www.bet365.com
-5.226.176.16 help.bet365.com
-5.226.176.7 members.bet365.com
-5.226.177.120 casino.bet365.com
-5.226.177.120 games.bet365.com
-5.226.177.120 vegas.bet365.com
-5.226.177.120 poker.bet365.com
-
-# [youav.com]
-104.27.130.127 youav.com
-104.27.130.127 www.youav.com
 
 # [verystream.com]
 104.20.131.131 verystream.com
@@ -4324,23 +4210,6 @@
 168.245.113.92 o10.mkt.fancentro.com
 168.245.107.50 o9.mkt.fancentro.com
 77.247.178.190 statz.fancentro.com
-
-# [erome.com]
-198.27.67.122 erome.com
-198.27.67.122 www.erome.com
-158.69.250.91 s1.erome.com
-158.69.250.74 s2.erome.com
-158.69.251.197 s3.erome.com
-158.69.250.92 s4.erome.com
-104.21.235.105 s5.erome.com
-104.21.235.106 s6.erome.com
-104.21.235.106 s7.erome.com
-104.21.235.106 s8.erome.com
-104.21.235.106 s9.erome.com
-104.21.235.106 s10.erome.com
-104.21.235.106 s11.erome.com
-104.21.235.106 s12.erome.com
-104.21.235.106 s13.erome.com
 
 # [zenra.net]
 66.199.190.206 zenra.net
