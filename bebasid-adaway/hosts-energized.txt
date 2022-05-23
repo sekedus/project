@@ -2,7 +2,7 @@
 # Hosts modified by Sekedus
 # Project page: https://github.com/sekedus/project/tree/main/bebasid-adaway
 #
-# Latest update: 2022-05-23T22:31:50+08:00
+# Latest update: 2022-05-23T22:32:32+08:00
 # Request update? visit: https://fb.com/sekedus
 #
 # Source: https://raw.githubusercontent.com/bebasid/bebasid/master/releases/hosts
@@ -7726,8 +7726,3 @@
 172.67.192.112 www.blog.wibudesu.com
 172.67.192.112 dl.wibudesu.com
 172.67.192.112 www.dl.wibudesu.com
-
-# [flyfuk.com]
-104.21.60.27 flyfuk.com
-104.21.60.27 www.flyfuk.com
-51.89.192.48 cdn1.flyfuk.com
