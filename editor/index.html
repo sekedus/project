@@ -15,17 +15,18 @@ a{color:#afafaf;text-decoration:none;}
 .f_grow{-webkit-flex-grow:1;flex-grow:1;}
 .f_middle{-webkit-align-items:center;align-items:center;-webkit-align-content:center;align-content:center;}
 .menu{margin-bottom:15px;}
+.menu .syntax input[type="radio"]{display:none;}
 .menu .syntax .btn{color:#afafaf;padding:4px 8px;margin:4px;font-weight:bold;cursor:pointer;border:1px solid #757575;}
 .menu .syntax input[type="radio"]:checked+label{color:#72a24d;border-color:#72a24d;}
+.menu .syntax input[type="radio"][disabled]+label{color:#757575;border-color:#757575;}
 #editor{width:100%;height:calc(100vh - 86px);background:#141414;border:1px solid #333;}
-.menu input[type="radio"]{display:none;}
 </style>
 </head>
 <body>
 
 <div class="content">
 <div class="menu flex f_middle">
-<div class="syntax flex"><input type="radio" id="text" name="sort" value="plaintext" checked><label class="btn" for="text">Text</label><input type="radio" id="html" name="sort" value="html"><label class="btn" for="html">HTML</label><input type="radio" id="css" name="sort" value="css"><label class="btn" for="css">CSS</label><input type="radio" id="js" name="sort" value="javascript"><label class="btn" for="js">JavaScript</label><input type="radio" id="json" name="sort" value="json"><label class="btn" for="json">JSON</label><input type="radio" id="php" name="sort" value="php"><label class="btn" for="php">PHP</label><input type="radio" id="xml" name="sort" value="xml"><label class="btn" for="xml">XML</label></div>
+<div class="syntax flex"><input type="radio" id="text" name="sort" value="plaintext" checked disabled><label class="btn" for="text">Text</label><input type="radio" id="html" name="sort" value="html" disabled><label class="btn" for="html">HTML</label><input type="radio" id="css" name="sort" value="css" disabled><label class="btn" for="css">CSS</label><input type="radio" id="js" name="sort" value="javascript" disabled><label class="btn" for="js">JavaScript</label><input type="radio" id="json" name="sort" value="json" disabled><label class="btn" for="json">JSON</label><input type="radio" id="php" name="sort" value="php" disabled><label class="btn" for="php">PHP</label><input type="radio" id="xml" name="sort" value="xml" disabled><label class="btn" for="xml">XML</label></div>
 <span class="f_grow"></span>
 <div class="source"><a href="https://github.com/microsoft/monaco-editor" target="_blank">Source (Monaco Editor 0.26.1)</a></div>
 </div>
@@ -46,6 +47,10 @@ require(["vs/editor/editor.main"], function() {
   
   monaco.editor.defineTheme('twilight', editor_theme);
   //monaco.editor.setTheme('twilight');
+  
+  monaco.editor.onDidCreateEditor(function(event) {
+    editor_lang.forEach(function(item) { item.disabled = false; });
+  });
   
   var editor_code = monaco.editor.create(editor_html, {
     language: 'plaintext',
