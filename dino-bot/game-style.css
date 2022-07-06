@@ -34,10 +34,41 @@ body {
 
 a, a:visited {
   color: #169cd5;
+  text-decoration: none;
 }
 
 b, strong, button {
   font-family: DogicaPixelBold;
+}
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.f_middle {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+.f_grow {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+.f_between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .space_v {
@@ -48,23 +79,36 @@ b, strong, button {
   max-width: 600px;
   margin: 0 auto;
   padding: 25px;
+  transform-origin: top center;
+  transition: transform 250ms;
 }
 
-.dino-link {
-  text-align: right;
+.dino-full label {
+  cursor: pointer;
 }
 
-.dino-link a {
-  text-decoration: none;
+.dino-full input[type=checkbox] {
+  margin: 0 10px 0 0;
 }
 
-.dino-auto {
+.fullscreen .dino-link, .fullscreen .dino-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.inverted .dino-canvas {
+  filter: invert(1);
+  background: #dfdedb;
+}
+
+.dino-bottom {
   text-align: center;
 }
 
 .dino-btn button {
   padding: 6px 12px;
   font-size: 100%;
+  text-transform: uppercase;
 }
 
 .dino-outer:first-of-type {
@@ -115,6 +159,35 @@ b, strong, button {
   display: none;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202124;
+    color: #9aa0a6;
+  }
+  a, a:visited {
+    color: #8ab4f8;
+  }
+  .dino-full input[type=checkbox] {
+    filter: invert(1) hue-rotate(190deg) brightness(1);
+  }
+  .dino-canvas {
+    filter: invert(1);
+  }
+  .inverted .dino-canvas {
+    filter: invert(0);
+  }
+  .dino-btn button {
+    padding: 7px 12px;
+    background-color: #3c4043;
+    color: #9aa0a6;
+    border: 1px solid #9aa0a6;
+  }
+  .dino-btn button[disabled] {
+    color: #727274;
+    border-color: #727274;
+  }
+}
+
 @media screen and (max-width:640px) {
   html, body {
     height: 100vh;
@@ -124,8 +197,16 @@ b, strong, button {
   }
   .dino-wrapper {
     height: 100%;
+    padding: 20px;
   }
-  .dino-auto {
+  .dino-full {
+    display: none;
+  }
+  .dino-link {
+    width: 100%;
+    text-align: right;
+  }
+  .dino-bottom {
     position: absolute;
     bottom: 0;
     right: 0;
