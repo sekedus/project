@@ -109,6 +109,9 @@
     /** @const */
     // var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
     window['IS_MOBILE'] = /Android/.test(window.navigator.userAgent) || IS_IOS;
+    
+    /** @const */
+    var FULLSCREEN_MODE_LS = 'dino-fullscreen';
 
     /** @const */
     var IS_TOUCH_ENABLED = 'ontouchstart' in window;
@@ -138,7 +141,9 @@
         MOBILE_SPEED_COEFFICIENT: 1.2,
         RESOURCE_TEMPLATE_ID: 'audio-resources',
         SPEED: 6,
-        SPEED_DROP_COEFFICIENT: 3
+        SPEED_DROP_COEFFICIENT: 3,
+        FULLSCREEN_MODE_INITIAL_TOP_POSITION: 35,
+        FULLSCREEN_MODE_TOP_POSITION_PERCENT: 0.1
     };
 
 
@@ -157,6 +162,7 @@
      * @enum {string}
      */
     Runner.classes = {
+        FULLSCREEN_MODE: 'fullscreen',
         CANVAS: 'dino-canvas',
         CONTAINER: 'dino-container',
         CRASHED: 'crashed',
@@ -409,6 +415,14 @@
 
             window.addEventListener(Runner.events.RESIZE,
                 this.debounceResize.bind(this));
+            
+            // Handle dark mode
+            var darkModeMediaQuery =
+                window.matchMedia('(prefers-color-scheme: dark)');
+            this.isDarkMode = darkModeMediaQuery && darkModeMediaQuery.matches;
+            darkModeMediaQuery.addListener((e) => {
+              this.isDarkMode = e.matches;
+            });
         },
 
         /**
@@ -442,6 +456,17 @@
                 boxStyles.paddingLeft.length - 2));
 
             this.dimensions.WIDTH = this.outerContainerEl.offsetWidth - padding * 2;
+            
+            if (this.isFullScreen()) {
+                if (window.innerWidth > 640) {
+                    this.dimensions.WIDTH = Math.min(DEFAULT_WIDTH, this.dimensions.WIDTH);
+                    if (this.activated) {
+                      this.setFullScreenScale();
+                    }
+                } else {
+                    this.removeFullScreenScale();
+                }
+            }
 
             // Redraw the elements back onto the canvas.
             if (this.canvas) {
@@ -518,6 +543,13 @@
          */
         startGame: function () {
             
+                if (this.isFullScreen()) {
+                    if (window.innerWidth > 640) {
+                        this.setFullScreenScale();
+                    } else {
+                        this.removeFullScreenScale();
+                    }
+                }
                 this.runningTime = 0;
                 this.playingIntro = false;
                 this.tRex.playingIntro = false;
@@ -570,9 +602,9 @@
                 if (this.playingIntro) {
                     this.horizon.update(0, this.currentSpeed, hasObstacles);
                 } else {
+                    var showNightMode = this.isDarkMode ^ this.inverted;
                     deltaTime = !this.activated ? 0 : deltaTime;
-                    this.horizon.update(deltaTime, this.currentSpeed, hasObstacles,
-                        this.inverted);
+                    this.horizon.update(deltaTime, this.currentSpeed, hasObstacles, showNightMode);
                 }
 
                 // Check for collisions.
@@ -859,6 +891,49 @@
                 this.invert(true);
                 this.update();
             }
+        },
+
+        /**
+         * Whether the game should go into fullscreen mode.
+         * @return {boolean}
+         */
+        isFullScreen() {
+            return localStorage.getItem(FULLSCREEN_MODE_LS) && localStorage.getItem(FULLSCREEN_MODE_LS) == 'true';
+        },
+      
+        /**
+         * Sets the scaling for fullscreen mode.
+         */
+        setFullScreenScale() {
+            document.body.classList.add(Runner.classes.FULLSCREEN_MODE);
+
+            var scaleEl = this.outerContainerEl;
+            if (scaleEl.hasAttribute('data-wrapper')) scaleEl = document.querySelector(`.${scaleEl.dataset.wrapper}`);
+            
+            var windowHeight = window.innerHeight;
+            var scaleHeight = windowHeight / scaleEl.offsetHeight;
+            var scaleWidth = (window.innerWidth - (window.innerWidth / 10)) / scaleEl.offsetWidth;
+            var scale = Math.max(1, Math.min(scaleHeight, scaleWidth));
+            var scaledCanvasHeight = scaleEl.offsetHeight * scale;
+            // Positions the game container at 10% of the available vertical window
+            // height minus the game container height.
+            var translateY = Math.ceil(Math.max(0, (windowHeight - scaledCanvasHeight -
+                Runner.config.FULLSCREEN_MODE_INITIAL_TOP_POSITION) *
+                Runner.config.FULLSCREEN_MODE_TOP_POSITION_PERCENT)) *
+                window.devicePixelRatio;
+        
+            scaleEl.style.transform =
+                'scale(' + scale + ') translateY(' + translateY + 'px)';
+        },
+      
+        /**
+         * Remove the scaling for fullscreen mode.
+         */
+        removeFullScreenScale() {
+            var scaleEl = this.outerContainerEl;
+            if (scaleEl.hasAttribute('data-wrapper')) scaleEl = document.querySelector(`.${scaleEl.dataset.wrapper}`);
+            scaleEl.style.removeProperty('transform');
+            document.body.classList.remove(Runner.classes.FULLSCREEN_MODE);
         },
 
         /**
