@@ -9,10 +9,13 @@
   </head>
   <body>
     <div class="dino-wrapper">
-      <div class="dino-link"><a href="https://plugins.svn.wordpress.org/dinosaur-game/" target="_blank">source</a></div>
+      <div class="dino-top flex f_between">
+        <div class="dino-full"><label class="flex f_middle"><input type="checkbox">Full Screen</label></div>
+        <div class="dino-link"><a href="https://plugins.svn.wordpress.org/dinosaur-game/" target="_blank">source</a></div>
+      </div>
       <div class="dino-text space_v">Chromium Based Browsers: <code>chrome://dino</code></div>
       <div id="dino-outer" class="dino-outer">
-        <div class="dino-inner">
+        <div class="dino-inner" data-wrapper="dino-wrapper">
           <div class="dino-icon dino-initial-icon" alt=""></div>
           <div id="dino-game">
             <img id="dinogame-sprites-1x" style="display:none;" src="./game-sprites-1x.png">
@@ -25,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="dino-auto space_v">
+      <div class="dino-bottom space_v">
         <span class="dino-btn"><button id="autoplay">autoplay</button></span>
         <span class="dino-btn"><button id="pause" disabled>pause</button></span>
         <span class="dino-btn"><button id="restart" disabled>restart</button></span>
