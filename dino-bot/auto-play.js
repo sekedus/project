@@ -37,6 +37,8 @@ function autoPlay(note) {
     auto_play = setInterval(function() {
       myinstance = this.Runner.instance_;
       myobstacles = myinstance.horizon.obstacles;
+
+      if (!myinstance.isFullScreen()) full_screen.checked = false;
     
       // if my tRex is ducking then
       if (myinstance.tRex.ducking) {
@@ -68,7 +70,7 @@ function autoPlay(note) {
         dis = IS_MOBILE ? (myobstacles[0]["yPos"] == 105 ? 55 : 65) : 85;
         
         // Making the action work
-        if (myobstacles[0].xPos <= dis + (step / 10)) {
+        if (myobstacles[0].xPos <= dis + (step / 8)) {
           // console.log(myobstacles[0]);
       
           // Perform the action
@@ -77,7 +79,7 @@ function autoPlay(note) {
             // we get the current speed of our dino
             curr_speed = myinstance.currentSpeed;
 
-            curr_speed = curr_speed + (step / 5);
+            curr_speed = curr_speed + (step / 8);
 
             // then making it jump
             myinstance.tRex.startJump(curr_speed);
@@ -91,10 +93,26 @@ function autoPlay(note) {
   }
 }
 
-var auto_play;
+var auto_play, myinstance;
 var btn_autoplay = document.getElementById('autoplay');
 var btn_stop = document.getElementById('pause');
 var btn_restart = document.getElementById('restart');
+var full_screen = document.querySelector('.dino-full input[type=checkbox]');
+
+full_screen.checked = localStorage.getItem('dino-fullscreen') && localStorage.getItem('dino-fullscreen') == 'true' ? true : false;
+
+full_screen.addEventListener('click', function() {
+  if (this.checked) {
+    if (myinstance && myinstance.activated) myinstance.setFullScreenScale();
+    localStorage.setItem('dino-fullscreen', 'true');
+  } else {
+    if (myinstance) {
+      myinstance.removeFullScreenScale();
+    } else {
+      localStorage.removeItem('dino-fullscreen');
+    }
+  }
+});
 
 btn_autoplay.addEventListener('click', function() {
   this.disabled = true;
