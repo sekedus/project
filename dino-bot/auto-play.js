@@ -64,11 +64,11 @@ function autoPlay(note) {
           action = "DUCK";
         }
     
-        step = (myinstance.distanceMeter.config.ACHIEVEMENT_DISTANCE * myinstance.distanceStep) / 5;
+        step = myinstance.distanceMeter.config.ACHIEVEMENT_DISTANCE * myinstance.distanceStep;
         dis = IS_MOBILE ? (myobstacles[0]["yPos"] == 105 ? 55 : 65) : 85;
         
         // Making the action work
-        if (myobstacles[0].xPos <= (dis + step)) {
+        if (myobstacles[0].xPos <= dis + (step / 10)) {
           // console.log(myobstacles[0]);
       
           // Perform the action
@@ -77,7 +77,7 @@ function autoPlay(note) {
             // we get the current speed of our dino
             curr_speed = myinstance.currentSpeed;
 
-            curr_speed = curr_speed + step;
+            curr_speed = curr_speed + (step / 5);
 
             // then making it jump
             myinstance.tRex.startJump(curr_speed);
