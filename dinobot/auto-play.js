@@ -130,7 +130,7 @@ var dino_mode = document.querySelector('.dino-mode span');
 full_screen.checked = localStorage.getItem('dino-fullscreen') && localStorage.getItem('dino-fullscreen') == 'true' ? true : false;
 
 window.addEventListener('load', function() {
-  document.body.classList.remove('loading');
+  setTimeout(function() { document.body.classList.remove('loading'); }, 1000);
   dinobot = Runner.instance_;
   multiEventListener(window, 'keydown keyup', 'add', checkBot);
   multiEventListener(dinobot.containerEl, 'touchstart touchend', 'add', checkBot);
