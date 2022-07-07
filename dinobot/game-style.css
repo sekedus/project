@@ -1,0 +1,263 @@
+/*!
+ * game-style.css | Dinosaur Game WordPress Plugin | https://wordpress.org/plugins/dinosaur-game
+ * This plugin is free to use under the GPLv2 license. | https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * This file contains CSS forked from the 'T-Rex runner' game in Chromium.
+ * Chromium is under Copyright 2015 by The Chromium Authors. All rights reserved. 
+ * See also: https://cs.chromium.org/chromium/src/LICENSE
+ *
+ */
+
+@font-face {
+  font-family: DogicaPixel;
+  src: url('./fonts/dogicapixel.4c37d66.ttf');
+}
+
+@font-face {
+  font-family: DogicaPixelBold;
+  src: url('./fonts/dogicapixelbold.d373f61.ttf');
+}
+
+*, *:before, *:after {
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: DogicaPixel;
+  font-family: DogicaPixelBold;
+  font-size: 10px;
+  color: #535353;
+}
+
+.loading:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483647;
+  background: #f5f5f5 url(./images/loading.gif) center/150px no-repeat;
+}
+
+a, a:visited {
+  color: #169cd5;
+  text-decoration: none;
+}
+
+b, strong, button {
+  font-family: DogicaPixelBold;
+}
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.f_middle {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+.f_grow {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+.f_between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.space_v {
+  margin: 30px 0;
+}
+
+.hidden, [hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* #===================================================================================== */
+
+.dino-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  transform-origin: top center;
+  transition: transform 250ms;
+}
+
+.dino-full label {
+  cursor: pointer;
+}
+
+.dino-full input[type=checkbox] {
+  margin: 0 10px 0 0;
+}
+
+.dino-toggle {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.dino-toggle span {
+  background: url(./images/moon.svg) center/100% 100% no-repeat;
+  padding: 5px 10px;
+}
+
+.fullscreen .dino-link {
+  display: none;
+}
+
+.fullscreen .dino-info {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.inverted .dino-canvas {
+  filter: invert(1);
+  background: #dfdedb;
+}
+
+.dino-mode, .dino-bottom {
+  text-align: center;
+}
+
+.dino-btn button {
+  padding: 6px 12px;
+  font-size: 100%;
+  text-transform: uppercase;
+}
+
+.dino-outer:first-of-type {
+  display: block;
+  border: 1px solid #535353;
+  margin: 1em auto;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dino-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.dino-outer .dino-inner {
+  color: #2b2b2b;
+  line-height: 0;
+  font-size: 0;
+  margin: 16px auto;
+  /* max-width: 600px; */
+  width: 100%;
+}
+
+.dino-outer .dino-container {
+  /* max-width: 600px; */
+  overflow: hidden;
+  width: 100%;
+}
+
+.dino-outer .dino-canvas {
+  /* max-width: 600px; */
+  opacity: 1;
+  overflow: hidden;
+  z-index: 2;
+  position: static;
+}
+
+.dino-outer .controller {
+  background: rgba(247, 247, 247, .1);
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+#dinosaur-game,
+[id^=dino-game-sprites] {
+  display: none;
+}
+
+/* #===================================================================================== */
+
+.dark body {
+  background-color: #202124;
+  color: #9aa0a6;
+}
+
+.dark .loading:before {
+  background-color: #202124;
+}
+
+.dark a, .dark :visited {
+  color: #8ab4f8;
+}
+
+.dark .dino-full input[type=checkbox] {
+  filter: invert(1) hue-rotate(190deg) brightness(1);
+}
+
+.dark .dino-toggle span {
+  background-image: url(./images/sun.svg);
+}
+
+.dark .dino-canvas {
+  filter: invert(1);
+}
+
+.dark .inverted .dino-canvas {
+  filter: invert(0);
+}
+
+.dark .dino-btn button {
+  padding: 7px 12px;
+  background-color: #3c4043;
+  color: #9aa0a6;
+  border: 1px solid #9aa0a6;
+}
+
+.dark .dino-btn button[disabled] {
+  color: #727274;
+  border-color: #727274;
+}
+
+/* #===================================================================================== */
+
+@media screen and (max-width:640px) {
+  html, body {
+    height: 100vh;
+  }
+  .space_v {
+    margin: 50px 0;
+  }
+  .dino-wrapper {
+    height: 100%;
+    padding: 20px;
+  }
+  .dino-full {
+    display: none;
+  }
+  .dino-toggle {
+    width: 100%;
+    text-align: right;
+  }
+  .dino-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
