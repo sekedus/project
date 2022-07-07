@@ -1027,7 +1027,7 @@
         toggleDark: function (showNightMode) {
             this.isDarkMode = showNightMode;
             if (this.activated) {
-                this.horizon.nightMode.opacity = showNightMode ? 1.0150000000000006 : 0;
+                this.horizon.nightMode.opacity = showNightMode || this.inverted ? 1.0150000000000006 : 0;
             }
 
             this.clearCanvas();

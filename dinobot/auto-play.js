@@ -89,11 +89,25 @@ function autoPlay(note) {
           action = "DUCK";
         }
     
-        step = dinobot.distanceMeter.config.ACHIEVEMENT_DISTANCE * dinobot.distanceStep;
-        dis = IS_MOBILE ? (myobstacles[0]["yPos"] == 105 ? 55 : 65) : 85;
+
+        cactus_small_wide = myobstacles[0]["yPos"] == 105 && myobstacles[0]["width"] == 51;
+        cactus_large_wide = myobstacles[0]["yPos"] == 90 && myobstacles[0]["width"] == 75;
+        if (IS_MOBILE) {
+          if (cactus_large_wide) {
+            dis = 45;
+          } else if (cactus_small_wide) {
+            dis = 55;
+          } else {
+            dis = 65;
+          }
+        } else {
+          dis = cactus_large_wide ? 75 : 85;
+        }
+        
+        step = (dinobot.distanceMeter.config.ACHIEVEMENT_DISTANCE * dinobot.distanceStep) / 8;
         
         // Making the action work
-        if (myobstacles[0].xPos <= dis + (step / 8)) {
+        if (myobstacles[0].xPos <= dis + step) {
           // console.log(myobstacles[0]);
       
           // Perform the action
@@ -102,7 +116,7 @@ function autoPlay(note) {
             // we get the current speed of our dino
             curr_speed = dinobot.currentSpeed;
 
-            curr_speed = curr_speed + (step / 8);
+            curr_speed = curr_speed + step;
 
             // then making it jump
             if (!dinobot.tRex.jumping && !dinobot.tRex.ducking) {
@@ -130,7 +144,7 @@ var dino_mode = document.querySelector('.dino-mode span');
 full_screen.checked = localStorage.getItem('dino-fullscreen') && localStorage.getItem('dino-fullscreen') == 'true' ? true : false;
 
 window.addEventListener('load', function() {
-  setTimeout(function() { document.body.classList.remove('loading'); }, 1000);
+  setTimeout(function() { document.body.classList.remove('loading'); }, 1500);
   dinobot = Runner.instance_;
   multiEventListener(window, 'keydown keyup', 'add', checkBot);
   multiEventListener(dinobot.containerEl, 'touchstart touchend', 'add', checkBot);
