@@ -17,7 +17,7 @@
       </div>
       <div class="dino-info space_v">Chromium Based Browsers: <code>chrome://dino</code></div>
       <div id="dino-outer" class="dino-outer">
-        <div class="dino-inner" data-wrapper="dino-wrapper">
+        <div class="dino-inner">
           <div class="dino-icon dino-initial-icon" alt=""></div>
           <div id="dino-game">
             <img id="dinogame-sprites-1x" style="display:none;" src="./images/game-sprites-1x.png">
@@ -32,9 +32,10 @@
       </div>
       <div class="dino-mode space_v hidden">Mode: <span></span></div>
       <div class="dino-bottom space_v">
-        <span class="dino-btn"><button id="autoplay">autoplay</button></span>
-        <span class="dino-btn"><button id="pause" disabled>pause</button></span>
-        <span class="dino-btn"><button id="restart" disabled>restart</button></span>
+        <button class="dino-btn" id="autoplay">autoplay</button>
+        <button class="dino-btn" id="pause" disabled>pause</button>
+        <button class="dino-btn" id="restart" disabled>restart</button>
+        <button class="dino-controller dino-btn no_items" id="play">play</button>
       </div>
     </div>
     <script src="./game-logic.js"></script>

@@ -16,17 +16,18 @@
      * @constructor
      * @export
      */
-    function Runner(outerContainerId, opt_config) {
+    function Runner(wrapperId, outerContainerId, opt_config) {
         // Singleton
         if (Runner.instance_) {
             return Runner.instance_;
         }
         Runner.instance_ = this;
 
-        this.outerContainerEl = document.querySelector(outerContainerId);
+        this.wrapperEl = document.querySelector(wrapperId);
+        this.outerEl = document.querySelector(outerContainerId);
         this.containerEl = null;
         this.snackbarEl = null;
-        this.detailsButton = this.outerContainerEl.querySelector('#details-button');
+        this.detailsButton = this.outerEl.querySelector('#details-button');
 
         this.config = opt_config || Runner.config;
 
@@ -144,7 +145,8 @@
         SPEED: 6,
         SPEED_DROP_COEFFICIENT: 3,
         FULLSCREEN_MODE_INITIAL_TOP_POSITION: 35,
-        FULLSCREEN_MODE_TOP_POSITION_PERCENT: 0.1
+        FULLSCREEN_MODE_TOP_POSITION_PERCENT: 0.1,
+
     };
 
 
@@ -172,7 +174,8 @@
         INVERTED: 'inverted',
         SNACKBAR: 'dino-snackbar',
         SNACKBAR_SHOW: 'dino-snackbar-show',
-        TOUCH_CONTROLLER: 'controller'
+        TOUCH_CONTROLLER: 'dino-controller',
+        NO_ITEMS: 'no_items'
     };
 
 
@@ -224,9 +227,9 @@
      * @enum {Object}
      */
     Runner.keycodes = {
-        JUMP: { '38': 1, '32': 1 },  // Up, spacebar
-        DUCK: { '40': 1 },  // Down
-        RESTART: { '13': 1 }  // Enter
+        JUMP: { 'ArrowUp': 1, 'Space': 1, '38': 1, '32': 1 },  // 38 = ArrowUp, 32 = Space
+        DUCK: { 'ArrowDown': 1, '40': 1 },  // 40 = ArrowDown
+        RESTART: { 'Enter': 1, '13': 1 }  // 13 = Enter
     };
 
 
@@ -251,6 +254,17 @@
     };
 
 
+    /**
+     * Runner innerHTML text
+     * @enum {string}
+     */
+    Runner.controller = {
+        PLAY: 'play',
+        JUMP: 'jump',
+        PLAY_AGAIN: 'play again'
+    };
+
+
     Runner.prototype = {
         /**
          * Whether the easter egg has been disabled. CrOS enterprise enrolled devices.
@@ -268,11 +282,11 @@
             this.containerEl = document.createElement('div');
             this.containerEl.className = Runner.classes.SNACKBAR;
             this.containerEl.textContent = loadTimeData.getValue('disabledEasterEgg');
-            this.outerContainerEl.appendChild(this.containerEl);
+            this.outerEl.appendChild(this.containerEl);
 
             // Show notification when the activation key is pressed.
             document.addEventListener(Runner.events.KEYDOWN, function (e) {
-                if (Runner.keycodes.JUMP[e.keyCode]) {
+                if (Runner.keycodes.JUMP[keyListener(e)]) {
                     this.containerEl.classList.add(Runner.classes.SNACKBAR_SHOW);
                     document.querySelector('.dino-icon').classList.add('icon-disabled');
                 }
@@ -406,7 +420,7 @@
             // Draw t-rex
             this.tRex = new Trex(this.canvas, this.spriteDef.TREX);
 
-            this.outerContainerEl.appendChild(this.containerEl);
+            this.outerEl.appendChild(this.containerEl);
 
             if (IS_MOBILE) {
                 this.createTouchController();
@@ -422,20 +436,31 @@
             var darkModeMediaQuery =
                 window.matchMedia('(prefers-color-scheme: dark)');
             this.isDarkMode = darkModeMediaQuery && darkModeMediaQuery.matches;
-            document.documentElement.classList.toggle(Runner.classes.DARK, this.isDarkMode);
-            darkModeMediaQuery.addListener((e) => {
-                this.isDarkMode = e.matches;
-                document.documentElement.classList.toggle(Runner.classes.DARK, this.isDarkMode);
-            });
+            this.toggleDark(this.isDarkMode);
+
+            try {
+                // Chrome & Firefox
+                darkModeMediaQuery.addEventListener('change', (e) => {
+                    this.toggleDark(e.matches);
+                });
+            } catch (err) {
+                // Safari
+                darkModeMediaQuery.addListener((e) => {
+                    this.toggleDark(e.matches);
+                });
+            }
         },
 
         /**
          * Create the touch controller. A div that covers whole screen.
          */
         createTouchController: function () {
-            this.touchController = document.createElement('div');
-            this.touchController.className = Runner.classes.TOUCH_CONTROLLER;
-            this.outerContainerEl.appendChild(this.touchController);
+            // this.touchController = document.createElement('div');
+            // this.touchController.className = Runner.classes.TOUCH_CONTROLLER;
+            // this.outerEl.appendChild(this.touchController);
+            this.touchController = this.wrapperEl.querySelector(`.${Runner.classes.TOUCH_CONTROLLER}`);
+            this.touchController.classList.remove(Runner.classes.NO_ITEMS);
+            this.touchController.innerHTML = Runner.controller.PLAY;
         },
 
         /**
@@ -455,11 +480,11 @@
             clearInterval(this.resizeTimerId_);
             this.resizeTimerId_ = null;
 
-            var boxStyles = window.getComputedStyle(this.outerContainerEl);
+            var boxStyles = window.getComputedStyle(this.outerEl);
             var padding = Number(boxStyles.paddingLeft.substr(0,
                 boxStyles.paddingLeft.length - 2));
 
-            this.dimensions.WIDTH = this.outerContainerEl.offsetWidth - padding * 2;
+            this.dimensions.WIDTH = this.outerEl.offsetWidth - padding * 2;
             
             if (this.isFullScreen() && document.documentElement.offsetWidth > 640) {
                 if (this.activated) {
@@ -497,6 +522,14 @@
                     this.gameOverPanel.draw();
                 }
             }
+            
+            if (this.touchController && IS_MOBILE) {
+                if (document.documentElement.offsetWidth > 640) {
+                    this.touchController.classList.add(Runner.classes.NO_ITEMS);
+                } else {
+                    this.touchController.classList.remove(Runner.classes.NO_ITEMS);
+                }
+            }
         },
 
         /**
@@ -528,7 +561,7 @@
                 this.containerEl.style.width = this.dimensions.WIDTH + 'px';
 
                 // if (this.touchController) {
-                //     this.outerContainerEl.appendChild(this.touchController);
+                //     this.outerEl.appendChild(this.touchController);
                 // }
                 this.playing = true;
                 this.activated = true;
@@ -615,6 +648,10 @@
 
                     if (this.currentSpeed < this.config.MAX_SPEED) {
                         this.currentSpeed += this.config.ACCELERATION;
+                    }
+                    
+                    if (IS_MOBILE) {
+                        this.touchController.innerHTML = Runner.controller.JUMP;
                     }
                 } else {
                     this.gameOver();
@@ -726,7 +763,7 @@
             }
 
             if (e.target != this.detailsButton) {
-                if (!this.crashed && (Runner.keycodes.JUMP[e.keyCode] ||
+                if (!this.crashed && (Runner.keycodes.JUMP[keyListener(e)] ||
                     e.type == Runner.events.TOUCHSTART)) {
                     if (!this.playing) {
                         this.loadSounds();
@@ -743,13 +780,14 @@
                     }
                 }
 
-                if (this.crashed && e.type == Runner.events.TOUCHSTART &&
-                    e.currentTarget == this.containerEl) {
+                // mobile
+                // if (this.crashed && e.type == Runner.events.TOUCHSTART && e.currentTarget == this.containerEl) {
+                if (this.crashed && e.type == Runner.events.TOUCHSTART) {
                     this.restart();
                 }
             }
 
-            if (this.playing && !this.crashed && Runner.keycodes.DUCK[e.keyCode]) {
+            if (this.playing && !this.crashed && Runner.keycodes.DUCK[keyListener(e)]) {
                 e.preventDefault();
                 if (this.tRex.jumping) {
                     // Speed drop, activated only when jump key is not pressed.
@@ -767,7 +805,7 @@
          * @param {Event} e
          */
         onKeyUp: function (e) {
-            var keyCode = String(e.keyCode);
+            var keyCode = String(keyListener(e));
             var isjumpKey = Runner.keycodes.JUMP[keyCode] ||
                 e.type == Runner.events.TOUCHEND ||
                 e.type == Runner.events.MOUSEDOWN;
@@ -781,9 +819,9 @@
                 // Check that enough time has elapsed before allowing jump key to restart.
                 var deltaTime = getTimeStamp() - this.time;
 
+                // desktop
                 if (Runner.keycodes.RESTART[keyCode] || this.isLeftClickOnCanvas(e) ||
-                    (deltaTime >= this.config.GAMEOVER_CLEAR_TIME &&
-                        Runner.keycodes.JUMP[keyCode])) {
+                    (deltaTime >= this.config.GAMEOVER_CLEAR_TIME && Runner.keycodes.JUMP[keyCode])) {
                     this.restart();
                 }
             } else if (this.paused && isjumpKey) {
@@ -851,6 +889,10 @@
 
             // Reset the time clock.
             this.time = getTimeStamp();
+
+            if (IS_MOBILE) {
+                this.touchController.innerHTML = Runner.controller.PLAY_AGAIN;
+            }
         },
 
         pause: function () {
@@ -871,7 +913,6 @@
                 this.paused = false;
                 this.stopped = false;
                 // this.tRex.update(0, Trex.status.RUNNING);
-                this.tRex.update(0, this.tRex.status);
                 this.time = getTimeStamp();
                 this.update();
             }
@@ -912,9 +953,7 @@
         setFullScreenScale() {
             document.body.classList.add(Runner.classes.FULLSCREEN_MODE);
 
-            var scaleEl = this.outerContainerEl;
-            if (scaleEl.hasAttribute('data-wrapper')) scaleEl = document.querySelector(`.${scaleEl.dataset.wrapper}`);
-            
+            var scaleEl = this.wrapperEl;
             var windowHeight = window.innerHeight;
             var scaleHeight = windowHeight / scaleEl.offsetHeight;
             var scaleWidth = document.documentElement.offsetWidth / (scaleEl.offsetWidth + (scaleEl.offsetWidth / 10));
@@ -935,8 +974,7 @@
          * Remove the scaling for fullscreen mode.
          */
         removeFullScreenScale() {
-            var scaleEl = this.outerContainerEl;
-            if (scaleEl.hasAttribute('data-wrapper')) scaleEl = document.querySelector(`.${scaleEl.dataset.wrapper}`);
+            var scaleEl = this.wrapperEl;
             scaleEl.style.removeProperty('transform');
             document.body.classList.remove(Runner.classes.FULLSCREEN_MODE);
         },
@@ -979,6 +1017,32 @@
             } else {
                 this.inverted = document.body.classList.toggle(Runner.classes.INVERTED,
                     this.invertTrigger);
+            }
+        },
+
+        /**
+         * Toggle dark mode.
+         * @param {boolean} showNightMode Whether night mode is activated.
+         */
+        toggleDark: function (showNightMode) {
+            this.isDarkMode = showNightMode;
+            if (this.activated) {
+                this.horizon.nightMode.opacity = showNightMode ? 1.0150000000000006 : 0;
+            }
+
+            this.clearCanvas();
+
+            document.documentElement.classList.toggle(Runner.classes.DARK, showNightMode);
+
+            var hasObstacles = this.runningTime > Runner.config.CLEAR_TIME;
+            this.horizon.update(0, this.currentSpeed, hasObstacles, showNightMode);
+
+            this.distanceMeter.update(0, Math.ceil(this.distanceRan));
+            this.tRex.draw(0, 0);
+          
+            // Game over panel.
+            if (this.crashed && this.gameOverPanel) {
+              this.gameOverPanel.draw();
             }
         }
     };
@@ -1095,6 +1159,16 @@
      */
     function getTimeStamp() {
         return IS_IOS ? new Date().getTime() : performance.now();
+    }
+
+
+    /**
+     * Keyboard Events with Cross-Browser Support, https://devstephen.medium.com/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a
+     * @return {key}
+     */
+    function keyListener(event) {
+        var key = event.code || event.keyCode;
+        return key;
     }
 
 
@@ -2817,7 +2891,7 @@ function startupDinosaurGame() {
     var rect = document.getElementById('dino-outer').getBoundingClientRect();
     // if (rect.top>-1 && rect.bottom <= jQuery(window).height()) {
     if (rect.top>-1 && rect.bottom <= window.innerHeight) {
-        new Runner('.dino-inner');
+        new Runner('.dino-wrapper', '.dino-inner');
         document.removeEventListener('scroll', startupDinosaurGame);
         document.removeEventListener('resize', startupDinosaurGame);
     }

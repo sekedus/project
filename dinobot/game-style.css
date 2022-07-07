@@ -65,6 +65,13 @@ button {
   display: flex;
 }
 
+.flex_wrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .f_middle {
   -webkit-align-items: center;
   align-items: center;
@@ -91,6 +98,10 @@ button {
   visibility: hidden;
 }
 
+.no_items {
+  display: none;
+}
+
 /* #===================================================================================== */
 
 .dino-wrapper {
@@ -109,7 +120,7 @@ button {
   margin: 0 10px 0 0;
 }
 
-.dino-toggle {
+.dino-toggle span {
   margin: 0 20px;
   cursor: pointer;
 }
@@ -130,14 +141,14 @@ button {
 
 .inverted .dino-canvas {
   filter: invert(1);
-  background: #dfdedb;
+  background: #fff;
 }
 
 .dino-mode, .dino-bottom {
   text-align: center;
 }
 
-.dino-btn button {
+.dino-btn {
   padding: 6px 12px;
   font-size: 100%;
   text-transform: uppercase;
@@ -222,16 +233,21 @@ button {
   filter: invert(0);
 }
 
-.dark .dino-btn button {
+.dark .dino-btn {
   padding: 7px 12px;
-  background-color: #3c4043;
-  color: #9aa0a6;
-  border: 1px solid #9aa0a6;
+  background-color: #4b4b4b;
+  color: #e8eaed;
+  border: 1px solid #bdc1c6;
 }
 
-.dark .dino-btn button[disabled] {
-  color: #727274;
-  border-color: #727274;
+.dark .dino-controller {
+  padding: 16px 21px;
+}
+
+.dark .dino-btn[disabled] {
+  background-color: #3c4043;
+  color: #9aa0a6;
+  border-color: #3c4043;
 }
 
 /* #===================================================================================== */
@@ -259,5 +275,12 @@ button {
     bottom: 0;
     right: 0;
     left: 0;
+    padding: 0 30px;
+  }
+  .dino-controller {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 30px;
+    font-size: 150%;
   }
 }

@@ -13,25 +13,14 @@ function multiEventListener(element, names, target, handler) {
 }
 
 function checkBot(e) {
-  dino_mode.parentElement.classList.remove('hidden');
-  dino_mode.innerHTML = 'manual';
   if (!auto_play && (Runner.keycodes.JUMP[e.keyCode] || e.type == Runner.events.TOUCHSTART || e.type == Runner.events.TOUCHEND)) {
+    dino_mode.parentElement.classList.remove('hidden');
+    dino_mode.innerHTML = 'manual';
     btn_autoplay.disabled = false;
     btn_pause.innerHTML = 'pause';
     btn_pause.disabled = true;
     btn_restart.disabled = true;
   }
-}
-
-function toggleDark(config) {
-  var hasObstacles = dinobot.runningTime > Runner.config.CLEAR_TIME;
-  dinobot.horizon.nightMode.opacity = config.opacity;
-  dinobot.isDarkMode = config.isDarkMode;
-  dinobot.clearCanvas();
-  dinobot.horizon.update(0, dinobot.currentSpeed, hasObstacles);
-  dinobot.tRex.update(0);
-  dinobot.tRex.draw(0, 0);
-  document.documentElement.classList.toggle(Runner.classes.DARK, dinobot.isDarkMode);
 }
 
 function keyDown(e) {
@@ -100,11 +89,11 @@ function autoPlay(note) {
           action = "DUCK";
         }
     
-        step = (dinobot.distanceMeter.config.ACHIEVEMENT_DISTANCE * dinobot.distanceStep) / 8;
+        step = dinobot.distanceMeter.config.ACHIEVEMENT_DISTANCE * dinobot.distanceStep;
         dis = IS_MOBILE ? (myobstacles[0]["yPos"] == 105 ? 55 : 65) : 85;
         
         // Making the action work
-        if (myobstacles[0].xPos <= (dis + step)) {
+        if (myobstacles[0].xPos <= dis + (step / 8)) {
           // console.log(myobstacles[0]);
       
           // Perform the action
@@ -113,10 +102,13 @@ function autoPlay(note) {
             // we get the current speed of our dino
             curr_speed = dinobot.currentSpeed;
 
-            curr_speed = curr_speed + step;
+            curr_speed = curr_speed + (step / 8);
 
             // then making it jump
-            dinobot.tRex.startJump(curr_speed);
+            if (!dinobot.tRex.jumping && !dinobot.tRex.ducking) {
+              dinobot.playSound(dinobot.soundFx.BUTTON_PRESS);
+              dinobot.tRex.startJump(curr_speed);
+            }
           } else if (action == "DUCK") {
             // console.log("Ducking.. Oo");
             dinobot.tRex.setDuck(true);
@@ -142,6 +134,7 @@ window.addEventListener('load', function() {
   dinobot = Runner.instance_;
   multiEventListener(window, 'keydown keyup', 'add', checkBot);
   multiEventListener(dinobot.containerEl, 'touchstart touchend', 'add', checkBot);
+  if (IS_MOBILE) multiEventListener(dinobot.touchController, 'touchstart touchend', 'add', checkBot);
 });
 
 full_screen.addEventListener('click', function() {
@@ -156,19 +149,10 @@ full_screen.addEventListener('click', function() {
 });
 
 dark_mode.addEventListener('click', function() {
-  var dark_config = {};
   if (dinobot.isDarkMode) {
-    dark_config = {
-      opacity: 0,
-      isDarkMode: false,
-    };
-    toggleDark(dark_config);
+    dinobot.toggleDark(false);
   } else {
-    dark_config = {
-      opacity: 0.9800000000000005,
-      isDarkMode: true,
-    };
-    toggleDark(dark_config);
+    dinobot.toggleDark(true);
   }
 });
 
