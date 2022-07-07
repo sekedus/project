@@ -12,6 +12,17 @@ function multiEventListener(element, names, target, handler) {
   });
 }
 
+function checkBot(e) {
+  dino_mode.parentElement.classList.remove('hidden');
+  dino_mode.innerHTML = 'manual';
+  if (!auto_play && (Runner.keycodes.JUMP[e.keyCode] || e.type == Runner.events.TOUCHSTART || e.type == Runner.events.TOUCHEND)) {
+    btn_autoplay.disabled = false;
+    btn_pause.innerHTML = 'pause';
+    btn_pause.disabled = true;
+    btn_restart.disabled = true;
+  }
+}
+
 function toggleDark(config) {
   var hasObstacles = dinobot.runningTime > Runner.config.CLEAR_TIME;
   dinobot.horizon.nightMode.opacity = config.opacity;
@@ -127,23 +138,11 @@ var dino_mode = document.querySelector('.dino-mode span');
 full_screen.checked = localStorage.getItem('dino-fullscreen') && localStorage.getItem('dino-fullscreen') == 'true' ? true : false;
 
 window.addEventListener('load', function() {
-  dinobot = Runner.instance_;
   document.body.classList.remove('loading');
+  dinobot = Runner.instance_;
+  multiEventListener(window, 'keydown keyup', 'add', checkBot);
+  multiEventListener(dinobot.containerEl, 'touchstart touchend', 'add', checkBot);
 });
-
-function checkBot(e) {
-  dino_mode.parentElement.classList.remove('hidden');
-  dino_mode.innerHTML = 'manual';
-  if (!auto_play && Runner.keycodes.JUMP[e.keyCode]) {
-    // autoPlay('stop');
-    btn_autoplay.disabled = false;
-    btn_pause.innerHTML = 'pause';
-    btn_pause.disabled = true;
-    btn_restart.disabled = true;
-  }
-}
-
-multiEventListener(window, 'keydown touchstart keyup touchend', 'add', checkBot);
 
 full_screen.addEventListener('click', function() {
   document.activeElement.blur();
