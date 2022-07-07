@@ -4,6 +4,14 @@
  *
  */
 
+// Multiple events to a listener https://stackoverflow.com/a/8797106/7598333
+function multiEventListener(element, names, target, handler) {
+  var events = names.split(' ');
+  events.forEach(function(item) {
+  element[`${target}EventListener`](item, handler, false);
+  });
+}
+
 function toggleDark(config) {
   var hasObstacles = dinobot.runningTime > Runner.config.CLEAR_TIME;
   dinobot.horizon.nightMode.opacity = config.opacity;
@@ -135,9 +143,7 @@ function checkBot(e) {
   }
 }
 
-window.addEventListener('keydown', checkBot);
-
-window.addEventListener('keyup', checkBot);
+multiEventListener(window, 'keydown touchstart keyup touchend', 'add', checkBot);
 
 full_screen.addEventListener('click', function() {
   document.activeElement.blur();
