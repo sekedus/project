@@ -73,7 +73,6 @@ function autoPlay(note) {
         autoPlay('stop');
         btn_pause.disabled = true;
         btn_restart.disabled = false;
-        localStorage.setItem(`dino-highscore_${new Date().getTime()}`,  Math.round(dinobot.highestScore / 40));
         return;
       }
       if (myobstacles.length > 0) {
