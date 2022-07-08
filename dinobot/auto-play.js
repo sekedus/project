@@ -75,6 +75,7 @@ function autoPlay(note) {
         autoPlay('stop');
         btn_pause.disabled = true;
         btn_restart.disabled = false;
+        localStorage.setItem(`highScore_${new Date().getTime()}`,  Math.round(dinobot.highestScore / 40));
       }
       if (myobstacles.length > 0) {
         action = "JUMP";
