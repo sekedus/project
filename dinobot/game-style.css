@@ -32,7 +32,7 @@ body {
   color: #535353;
 }
 
-.loading:before {
+.loading:before, .loading:after {
   content: '';
   position: fixed;
   top: 0;
@@ -40,7 +40,11 @@ body {
   bottom: 0;
   left: 0;
   z-index: 2147483647;
-  background: #dfdedb url(./images/loading.gif) center/150px no-repeat;
+  background: #dfdedb;
+}
+
+.loading:after {
+  background: url(./images/loading.gif) center/150px no-repeat;
 }
 
 a, a:visited {
@@ -210,6 +214,10 @@ button {
 }
 
 .dark .loading:before {
+  background-color: #202124;
+}
+
+.dark .loading:after {
   filter: invert(1);
 }
 
