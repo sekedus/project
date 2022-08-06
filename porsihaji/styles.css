@@ -20,7 +20,8 @@ ol,ul{list-style:none;}
 h1{font-size:150%;}
 h2{font-size:120%;}
 input[type=text],input[type=number],textarea,select{padding:6px 10px;background:#fbfbfb;outline:none;border-radius:2px;border:1px solid var(--border);}
-input[readonly]{cursor:default;}
+input[readonly]{background:rgb(176,190,197,.5);cursor:default;}
+input[disabled]{background:var(--border);}
 textarea{overflow:auto;resize:vertical;}
 svg{fill:currentColor;}
 
@@ -98,7 +99,7 @@ a.btn{color:var(--color3);}
 
 /* Post Wrapper */
 .main .post-wrapper .post-header{margin:0 0 30px;}
-.main .post-wrapper .post-content .form-porsi .ph-submit{margin:20px 0 5px;}
+.main .post-wrapper .post-content .form-porsi .ph-submit{margin:20px 0;}
 
 @keyframes pulse {
   0%{box-shadow:0 0 0 0px #dc3545;}
