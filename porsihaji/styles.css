@@ -98,7 +98,7 @@ a.btn{color:var(--color3);}
 
 /* Post Wrapper */
 .main .post-wrapper .post-header{margin:0 0 30px;}
-.main .post-wrapper .post-content .form-porsi .ph-submit{margin:20px 0;}
+.main .post-wrapper .post-content .form-porsi .ph-submit{margin:20px 0 5px;}
 
 @keyframes pulse {
   0%{box-shadow:0 0 0 0px #dc3545;}
