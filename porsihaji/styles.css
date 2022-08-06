@@ -118,6 +118,7 @@ a.btn{color:var(--color3);}
 }
 
 .dark .loading.loge:before{background-color:rgba(0,0,0,.7);}
+.dark input[type=text],.dark input[type=number],.dark textarea,.dark select{background-color:var(--color2);color:var(--color4);}
 
 /* #===========================================================================================#  */
 
