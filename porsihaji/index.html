@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="id-ID">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Cek Keberangkatan Haji</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Cek Nomor Porsi Untuk Perkiraan Berangkat atau Estimasi Keberangkatan Jamaah Haji Reguler Indonesia."/>
+<meta name="keywords" content="porsi haji, estimasi keberangkatan haji, haji pintar, jadwal haji"/>
+<!-- Social Media Meta Tags -->
+<meta itemprop="name" content="Cek Keberangkatan Haji">
+<meta itemprop="description" content="Cek Nomor Porsi Untuk Perkiraan Berangkat atau Estimasi Keberangkatan Jamaah Haji Reguler Indonesia.">
+<!-- <meta itemprop="image" content="http://bakomon.me/images/cover.png"> -->
+<meta property="article:publisher" content="https://github.com/sekedus/project/tree/main/porsihaji"/>
+<meta property="og:local" content="id_ID"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Cek Keberangkatan Haji"/>
+<meta property="og:description" content="Cek Nomor Porsi Untuk Perkiraan Berangkat atau Estimasi Keberangkatan Jamaah Haji Reguler Indonesia."/>
+<!-- <meta property="og:url" content="http://bakomon.me/"/> -->
+<meta property="og:site_name" content="Cek Keberangkatan Haji"/>
+<!-- <meta property="og:image" content="http://bakomon.me/images/cover.png"/> -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Cek Keberangkatan Haji"/>
+<!-- Mobile Properties -->
+<meta name="theme-color" content="#4774a7"/>
+<meta name="msapplication-navbutton-color" content="#4774a7"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="#4774a7" />
+<!-- Mobile Favicons -->
+<meta name="application-name" content="Cek Keberangkatan Haji" />
+<meta name="msapplication-TileColor" content="#4774a7"/>
+<!-- <link rel="icon" type="image/png" href="./icon/favicon.png"/> -->
+<link rel="stylesheet" type="text/css" href="./styles.css"/>
+</head>
+<body>
+<div class="main max layer ">
+  <div class="post-wrapper">
+    <div class="post-header t_center"><h1 class="title">Cek Keberangkatan Haji</h1></div>
+    <div class="post-content bg2 layer radius">
+      <form class="form-porsi" action="https://haji.kemenag.go.id/v4/" method="post" id="gps-estimasi-form-berangkat" accept-charset="UTF-8">
+        <div class="ph-group flex f_middle">
+          <label class="ph-left w_30" for="nomor-porsi">Nomor Porsi</label>
+          <input class="ph-porsi ph-right w_70" type="text" name="nomor_porsi" id="nomor-porsi" placeholder="Nomor Porsi" required="">
+        </div>
+        <button type="submit" class="ph-submit btn full">Cek Data Haji</button>
+        <input autocomplete="off" value="form-PoifpH0XcVo5NeaiymFvrs1NSpYL1RhZ_S3J8yWGPSY" type="hidden" name="form_build_id">
+        <input type="hidden" name="form_id" value="gps_estimasi_form_berangkat">
+      </form>
+    </div>
+  </div>
+</div>
+<!-- <script src="./script.js" type="text/javascript"></script> -->
+<script type="text/javascript">
+document.querySelector('.form-porsi').addEventListener('submit', function() {
+  if (this.classList.contains('selected')) return false;
+  this.classList.add('selected');
+  // document.querySelector('.post-content').classList.add('loading', 'loge');
+});
+</script>
+</body>
+</html>
