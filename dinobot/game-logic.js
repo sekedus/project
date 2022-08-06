@@ -885,6 +885,7 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
+                localStorage.setItem(`dino-score_${new Date().getTime()}`,  Math.round(dinobot.highestScore * dinobot.distanceMeter.config.COEFFICIENT));
             }
 
             // Reset the time clock.

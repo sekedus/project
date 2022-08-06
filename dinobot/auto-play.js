@@ -1,7 +1,6 @@
 /*!
  * Source: https://dev.to/official_fire/making-the-chrome-dino-game-play-itself-using-javascript-2j8n
  * Similar: https://www.codesnail.com/autoplay-chrome-dinosaur-game-with-javascript/
- *
  */
 
 // Multiple events to a listener https://stackoverflow.com/a/8797106/7598333
@@ -71,10 +70,10 @@ function autoPlay(note) {
       if (dinobot.crashed) {
         // When the game is over then
         // console.log("Game Over... Paste the code again to automate the game");
-        // return;
         autoPlay('stop');
         btn_pause.disabled = true;
         btn_restart.disabled = false;
+        return;
       }
       if (myobstacles.length > 0) {
         action = "JUMP";
