@@ -23,10 +23,8 @@
       .ua_info mark{padding:2px 5px;color:#f5f5f5;}
       .ua_info.green mark{background:#238636;}
       .ua_info.red mark{background:#dd584f;}
-      .ua_info .ua_url{margin-top:5px;overflow-wrap:break-word;}
       .user_agent textarea{width:100%;margin:40px 0;font:bold 16px Arial;text-align:center;background:transparent;color:inherit;overflow:hidden;border:0;}
-      .user_agent.big{font-size:470%;font-weight:bold;overflow-wrap: 
-break-word;}
+      .user_agent.big{font-size:470%;font-weight:bold;overflow-wrap:break-word;}
       @keyframes pulse {
         0%{box-shadow:0 0 0 0px #dd584f;}
         100%{box-shadow:0 0 0 4px #dd584f;}
@@ -47,14 +45,32 @@ break-word;}
       <div class="ua_title dareboost"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
       <div class="ua_title dmbrowser"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
       <div class="ua_title phantomas"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
-      <div class="ua_info">
-        <div>JS status = <mark></mark></div>
-        <div class="ua_url">URL: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</div>
-      </div>
+      <div class="ua_info">JS status = <mark></mark></div>
       <div class="user_agent"><textarea readonly></textarea></div>
       <div class="user_agent big"></div>
     </div>
     <script>
+      // Add script to head https://codepen.io/sekedus/pen/QWKYpVR
+      function addScript(options, note) {
+        // data, id, info, boolean, parent
+        if (!('data' in options)) return;
+        var js_new = document.createElement('script');
+        if ('id' in options) js_new.id = options.id;
+        if ('async' in options) js_new.async = options.async;
+        if (note == 'in') {
+          js_new.type = 'text/javascript';
+          js_new.innerHTML = options.data;
+        } else {
+          if ('callback' in options) {
+            js_new.onerror = options.callback(true);
+            js_new.onload = options.callback(false);
+          }
+          js_new.src = options.data;
+        }
+        var parent = 'parent' in options && parent.tagName ? options.parent : document.querySelector('head');
+        parent.appendChild(js_new);
+      }
+      
       /* {website-speed-test} */
       var ua_name = '';
       var ua_chk = false;
@@ -77,18 +93,15 @@ break-word;}
       }
       
       if (!ua_chk || ua_wl.search.indexOf('js=true') != -1) {
-        var ads_js = document.createElement('script');
-        ads_js.async = true;
-        ads_js.addEventListener('load', function() {
-          document.querySelector('.ua_info').classList.add('green');
-          document.querySelector('.ua_info mark').innerHTML = 'loaded';
-        });
-        ads_js.addEventListener('error', function() {
-          document.querySelector('.ua_info').classList.add('red');
-          document.querySelector('.ua_info mark').innerHTML = 'failed to load';
-        });
-        ads_js.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-        document.querySelector('head').appendChild(ads_js);
+        var js_list = ['https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js','https://www.googletagmanager.com/gtm.js?id=GTM-K9CP2C8','https://www.googletagmanager.com/gtag/js','https://www.google-analytics.com/analytics.js'];
+        for (var i = 0; i < js_list.length; i++) {
+          addScript({data: js_list[i], async: true, callback: function(error) {
+            var js_class = error ? 'red' : 'green';
+            var js_str = error ? 'failed to load' : 'loaded';
+            document.querySelector('.ua_info').classList.add(js_class);
+            document.querySelector('.ua_info mark').innerHTML = js_str;
+          }});
+        }
       }
 
       var ua_rgx = new RegExp('('+ ua_name +')', 'i');
