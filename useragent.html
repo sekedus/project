@@ -5,75 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Website Speed Test User-Agent</title>
     <style>
-      body{margin:0;padding:15px 20px;color:#f5f5f5;font-size:16px;font-family:Arial;text-align:center;}
+      *,*:before,*:after{outline:0;-webkit-box-sizing:border-box;box-sizing:border-box;}
+      body{margin:0;padding:15px 20px;color:#f5f5f5;font:16px Arial;text-align:center;}
       body.default{color:initial;}
-      body.pingdom{background:#fdf45b;color:initial;}
-      body.lighthouse{background:#4285f4;}
-      body.gtmetrix{background:#21759b;}
-      body.webpagetest{background:#121D35;}
-      body.dmbrowser{background:#4caf50;}
-      body.dareboost{background:#12a6c6;}
-      body.phantomas{background:#ffa319;color:#212240;}
+      body.pingdom,.ua_title.pingdom{background:#fdf45b;color:initial;}
+      body.lighthouse,.ua_title.lighthouse{background:#4285f4;}
+      body.gtmetrix,.ua_title.gtmetrix{background:#21759b;}
+      body.webpagetest,.ua_title.webpagetest{background:#121D35;}
+      body.dareboost,.ua_title.dareboost{background:#12a6c6;}
+      body.dmbrowser,.ua_title.dmbrowser{background:#4caf50;}
+      body.phantomas,.ua_title.phantomas{background:#ffa319;color:#212240;}
       a{color:inherit;text-decoration:none;}
-      .ua_title{padding:10px 15px;color:#f5f5f5;display:inline-block;margin:10px;}
-      .user_agent{font-weight:bold;margin-top:40px;}
-      .user_agent.big{font-size:75px;}
+      .pulse{animation:pulse 1s ease infinite alternate;}
+      .ua_title{padding:10px 15px;background:#2d333b;color:#f5f5f5;display:inline-block;margin:10px;}
+      .ua_title.home{color:rgba(205,217,229.7);border-radius:15px;}
+      .ua_info{margin-top:40px;font-weight:bold;}
+      .ua_info.green mark{padding:2px 5px;color:#f5f5f5;}
+      .ua_info.green mark{background:#238636;}
+      .ua_info.red mark{background:#dd584f;}
+      .ua_info .ua_url{margin-top:5px;}
+      .user_agent textarea{width:100%;margin:40px 0;font:bold 16px Arial;text-align:center;background:transparent;color:inherit;overflow:hidden;border:0;}
+      .user_agent.big{font-size:470%;font-weight:bold;}
+      @keyframes pulse {
+        0%{box-shadow:0 0 0 0px #dd584f;}
+        100%{box-shadow:0 0 0 4px #dd584f;}
+      }
+      @media screen and (max-width:768px) {
+        .user_agent textarea{font-size:110%;}
+        .user_agent.big{display:none;}
+      }
     </style>
   </head>
   <body class="default">
-    <div class="ua_title" style="background:#2d333b;color:rgba(205,217,229.7);border-radius:15px;"><a href="/project/useragent.html">Home</a></div>
-    <div class="ua_title" style="background:#fdf45b;color:initial;"><a href="//tools.pingdom.com" target="_blank">Pingdom</a></div>
-    <div class="ua_title" style="background:#4285f4;"><a href="//developers.google.com/speed/pagespeed/insights/" target="_blank">Lighthouse</a></div>
-    <div class="ua_title" style="background:#21759b;"><a href="//gtmetrix.com" target="_blank">GTmetrix</a></div>
-    <div class="ua_title" style="background:#121D35;"><a href="//www.webpagetest.org" target="_blank">PTST (WebPageTest)</a></div>
-    <div class="ua_title" style="background:#12a6c6;"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
-    <div class="ua_title" style="background:#4caf50;"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
-    <div class="ua_title" style="background:#ffa319;color:#212240;"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
-    <div class="user_agent"></div>
+    <div class="ua_title home"><a href="./useragent.html">Home</a></div>
+    <div class="ua_title pingdom"><a href="//tools.pingdom.com" target="_blank">Pingdom</a></div>
+    <div class="ua_title lighthouse"><a href="//developers.google.com/speed/pagespeed/insights/" target="_blank">Lighthouse</a></div>
+    <div class="ua_title gtmetrix"><a href="//gtmetrix.com" target="_blank">GTmetrix</a></div>
+    <div class="ua_title webpagetest"><a href="//www.webpagetest.org" target="_blank">PTST (WebPageTest)</a></div>
+    <div class="ua_title dareboost"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
+    <div class="ua_title dmbrowser"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
+    <div class="ua_title phantomas"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
+    <div class="ua_info">
+      <div>JS loaded = <mark></mark></div>
+      <div class="ua_url">URL: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</div>
+    </div>
+    <div class="user_agent"><textarea readonly></textarea></div>
     <div class="user_agent big"></div>
     <script>
       /* {website-speed-test} */
       var ua_name = '';
+      var ua_chk = false;
       var user_agent = navigator.userAgent;
-      if (user_agent.search(/Pingdom/i) != -1) {
-        document.body.style.cssText = 'background:#fdf45b';
-        document.body.className = 'pingdom';
-        ua_name = 'Pingdom';
+      var ua_active = user_agent.search(/Pingdom/i) != -1 ? 'pingdom' : user_agent.search(/Lighthouse/i) != -1 ? 'lighthouse' : user_agent.search(/GTmetrix/i) != -1 ? 'gtmetrix' : user_agent.search(/PTST\//i) != -1 ? 'webpagetest' : user_agent.search(/DMBrowser/i) != -1 ? 'dmbrowser' : user_agent.search(/DareBoost/i) != -1 ? 'dareboost' : user_agent.search(/Phantomas|\sYLT\s/i) != -1 ? 'phantomas' : false;
+      var ua_lists = {"pingdom":{"bg":"fdf45b","name":"Pingdom"},"lighthouse":{"bg":"4285f4","name":"Lighthouse"},"gtmetrix":{"bg":"21759b","name":"GTmetrix"},"webpagetest":{"bg":"121D35","name":"PTST"},"dmbrowser":{"bg":"4caf50","name":"DMBrowser"},"dareboost":{"bg":"12a6c6","name":"DareBoost"},"phantomas":{"bg":"ffa319","name":"Phantomas|YLT"}};
+
+      if (ua_active) {
+        document.body.style.cssText = 'background:#'+ ua_lists[ua_active].bg;
+        document.body.className = ua_active;
+        document.querySelector(`.ua_title.${ua_active}`).classList.add('pulse');
+        ua_name = ua_lists[ua_active].name;
+        ua_chk = true;
       }
-      if (user_agent.search(/Lighthouse/i) != -1) {
-        document.body.style.cssText = 'background:#4285f4';
-        document.body.className = 'lighthouse';
-        ua_name = 'Lighthouse';
+
+      if (ua_chk) {
+        document.querySelector('.ua_info').classList.add('red');
+        document.querySelector('.ua_info mark').innerHTML = 'false';
+      } else {
+        var ads_js = document.createElement('script');
+        ads_js.async = true;
+        ads_js.addEventListener('load', function() {
+          document.querySelector('.ua_info').classList.add('green');
+          document.querySelector('.ua_info mark').innerHTML = 'true';
+        });
+        ads_js.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        document.querySelector('head').appendChild(ads_js);
       }
-      if (user_agent.search(/GTmetrix/i) != -1) {
-        document.body.style.cssText = 'background:#21759b';
-        document.body.className = 'gtmetrix';
-        ua_name = 'GTmetrix';
+
+      var ua_rgx = new RegExp('('+ ua_name +')', 'i');
+      var ua_elem = document.querySelector('.user_agent textarea');
+      ua_elem.value = user_agent;
+      ua_elem.style.height = ua_elem.scrollHeight +'px';
+      ua_elem.addEventListener('dblclick', function() { this.select(); });
+
+      if (user_agent.search(/Mobile/i) == -1) {
+        var ua_mark = ua_chk ? user_agent.replace(ua_rgx, '<mark>$1</mark>') : user_agent;
+        document.querySelector('.user_agent.big').innerHTML = ua_mark;
       }
-      if (user_agent.search(/PTST\//i) != -1) {
-        document.body.style.cssText = 'background:#121D35';
-        document.body.className = 'webpagetest';
-        ua_name = 'PTST';
-      }
-      if (user_agent.search(/DMBrowser/i) != -1) {
-        document.body.style.cssText = 'background:#4caf50';
-        document.body.className = 'dmbrowser';
-        ua_name = 'DMBrowser';
-      }
-      if (user_agent.search(/DareBoost/i) != -1) {
-        document.body.style.cssText = 'background:#12a6c6';
-        document.body.className = 'dareboost';
-        ua_name = 'DareBoost';
-      }
-      if (user_agent.search(/Phantomas|\sYLT\s/i) != -1) {
-        document.body.style.cssText = 'background:#ffa319';
-        document.body.className = 'phantomas';
-        ua_name = 'Phantomas|YLT';
-      }
-      var ua_mark = user_agent.replace(new RegExp('('+ ua_name +')', 'i'), '<mark>$1</mark>');
-      document.querySelector('.user_agent').innerHTML = ua_mark;
-      if (user_agent.search(/Mobile/i) == -1) document.querySelector('.user_agent.big').innerHTML = ua_mark;
-      if (window.location.search.indexOf('data=') == -1) window.location.href = window.location.href +'?data='+ encodeURIComponent(user_agent);
+
+      var ua_wl = window.location;
+      if (ua_wl.search.indexOf('url=true') != -1 && ua_wl.search.indexOf('data=') == -1) ua_wl.href = ua_wl.hostname + ua_wl.pathname +'?url=true&data='+ encodeURIComponent(user_agent);
     </script>
   </body>
 </html>
