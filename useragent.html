@@ -102,7 +102,7 @@ break-word;}
         document.querySelector('.user_agent.big').innerHTML = ua_mark;
       }
 
-      if (ua_wl.search.indexOf('url=true') != -1 && ua_wl.search.indexOf('data=') == -1) ua_wl.href = '.'+ ua_wl.pathname +'?url=true&data='+ encodeURIComponent(user_agent);
+      if (ua_wl.search.indexOf('url=true') != -1 && ua_wl.search.indexOf('data=') == -1) ua_wl.href = '//'+ ua_wl.hostname + ua_wl.pathname +'?url=true&data='+ encodeURIComponent(user_agent);
     </script>
   </body>
 </html>
