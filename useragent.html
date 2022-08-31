@@ -20,12 +20,13 @@
       .ua_title{padding:10px 15px;background:#2d333b;color:#f5f5f5;display:inline-block;margin:10px;}
       .ua_title.home{color:rgba(205,217,229.7);border-radius:15px;}
       .ua_info{margin-top:40px;font-weight:bold;}
-      .ua_info.green mark{padding:2px 5px;color:#f5f5f5;}
+      .ua_info mark{padding:2px 5px;color:#f5f5f5;}
       .ua_info.green mark{background:#238636;}
       .ua_info.red mark{background:#dd584f;}
-      .ua_info .ua_url{margin-top:5px;}
+      .ua_info .ua_url{margin-top:5px;overflow-wrap:break-word;}
       .user_agent textarea{width:100%;margin:40px 0;font:bold 16px Arial;text-align:center;background:transparent;color:inherit;overflow:hidden;border:0;}
-      .user_agent.big{font-size:470%;font-weight:bold;}
+      .user_agent.big{font-size:470%;font-weight:bold;overflow-wrap: 
+break-word;}
       @keyframes pulse {
         0%{box-shadow:0 0 0 0px #dd584f;}
         100%{box-shadow:0 0 0 4px #dd584f;}
@@ -37,20 +38,22 @@
     </style>
   </head>
   <body class="default">
-    <div class="ua_title home"><a href="./useragent.html">Home</a></div>
-    <div class="ua_title pingdom"><a href="//tools.pingdom.com" target="_blank">Pingdom</a></div>
-    <div class="ua_title lighthouse"><a href="//developers.google.com/speed/pagespeed/insights/" target="_blank">Lighthouse</a></div>
-    <div class="ua_title gtmetrix"><a href="//gtmetrix.com" target="_blank">GTmetrix</a></div>
-    <div class="ua_title webpagetest"><a href="//www.webpagetest.org" target="_blank">PTST (WebPageTest)</a></div>
-    <div class="ua_title dareboost"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
-    <div class="ua_title dmbrowser"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
-    <div class="ua_title phantomas"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
-    <div class="ua_info">
-      <div>JS loaded = <mark></mark></div>
-      <div class="ua_url">URL: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</div>
+    <div class="wrapper">
+      <div class="ua_title home"><a href="./useragent.html">Home</a></div>
+      <div class="ua_title pingdom"><a href="//tools.pingdom.com" target="_blank">Pingdom</a></div>
+      <div class="ua_title lighthouse"><a href="//developers.google.com/speed/pagespeed/insights/" target="_blank">Lighthouse</a></div>
+      <div class="ua_title gtmetrix"><a href="//gtmetrix.com" target="_blank">GTmetrix</a></div>
+      <div class="ua_title webpagetest"><a href="//www.webpagetest.org" target="_blank">PTST (WebPageTest)</a></div>
+      <div class="ua_title dareboost"><a href="//www.dareboost.com/en" target="_blank">DareBoost</a></div>
+      <div class="ua_title dmbrowser"><a href="//www.dotcom-tools.com/website-speed-test" target="_blank">DMBrowser (Dotcom Monitor)</a></div>
+      <div class="ua_title phantomas"><a href="//yellowlab.tools" target="_blank">Phantomas/YLT (Yellow Lab  Tools)</a></div>
+      <div class="ua_info">
+        <div>JS status = <mark></mark></div>
+        <div class="ua_url">URL: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js</div>
+      </div>
+      <div class="user_agent"><textarea readonly></textarea></div>
+      <div class="user_agent big"></div>
     </div>
-    <div class="user_agent"><textarea readonly></textarea></div>
-    <div class="user_agent big"></div>
     <script>
       /* {website-speed-test} */
       var ua_name = '';
@@ -69,13 +72,17 @@
 
       if (ua_chk) {
         document.querySelector('.ua_info').classList.add('red');
-        document.querySelector('.ua_info mark').innerHTML = 'false';
+        document.querySelector('.ua_info mark').innerHTML = 'not loaded';
       } else {
         var ads_js = document.createElement('script');
         ads_js.async = true;
         ads_js.addEventListener('load', function() {
           document.querySelector('.ua_info').classList.add('green');
-          document.querySelector('.ua_info mark').innerHTML = 'true';
+          document.querySelector('.ua_info mark').innerHTML = 'loaded';
+        });
+        ads_js.addEventListener('error', function() {
+          document.querySelector('.ua_info').classList.add('red');
+          document.querySelector('.ua_info mark').innerHTML = 'failed to load';
         });
         ads_js.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         document.querySelector('head').appendChild(ads_js);
