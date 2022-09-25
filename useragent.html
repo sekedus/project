@@ -122,7 +122,7 @@
             var js_str = error ? 'failed to load' : 'loaded';
             js_ua.className = js_ua.className.replace(/_(red|green)/, '');
             js_ua.classList.add(js_class);
-            js_ua.querySelector('mark').innerHTML = js_str;
+            js_ua.querySelector('mark').innerHTML = js_str +' '+ (i+1);
           }});
         }
         var img_list = ['https://i.postimg.cc/4Z7FxGyy/terminator-two-judgement-day.jpg','https://i.postimg.cc/zq5d7RjH/avatar-2009.jpg','https://i.postimg.cc/jxWv26sm/avengers-endgame.jpg','https://i.postimg.cc/CwXRYbQz/the-dark-knight-2008.jpg','https://i.postimg.cc/RMcYgfwD/tenet.jpg'];
@@ -132,12 +132,12 @@
           add_img.addEventListener('load', function() {
             img_ua.classList.remove('_red');
             img_ua.classList.add('_green');
-            img_ua.querySelector('mark').innerHTML = 'loaded';
+            img_ua.querySelector('mark').innerHTML = 'loaded' +' '+ (j+1);
           });
           add_img.addEventListener('error', function() {
             img_ua.classList.remove('_green');
             img_ua.classList.add('_red');
-            img_ua.querySelector('.mark').innerHTML = 'failed to load';
+            img_ua.querySelector('.mark').innerHTML = 'failed to load' +' '+ (j+1);
           });
           add_img.className = 'flying-image';
           add_img.src = img_list[j];
