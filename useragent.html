@@ -19,12 +19,12 @@
       .pulse{animation:pulse 1s ease infinite alternate;}
       .space{margin-bottom:40px;}
       .ua_title{padding:10px 15px;background:#2d333b;color:#f5f5f5;display:inline-block;margin:10px;}
-      .ua_title.home{color:rgba(205,217,229.7);border-radius:15px;}
+      .ua_title.ua_list{color:rgba(205,217,229.7);border-radius:15px;}
       .ua_info{font-weight:bold;}
       .ua_info .ua_img{margin-top:5px;}
-      .ua_info .green mark{background:#238636;}
-      .ua_info .red mark{background:#dd584f;}
-      .ua_info mark{padding:2px 5px;color:#f5f5f5;}
+      .ua_info ._green mark{background:#238636;color:#f5f5f5;}
+      .ua_info ._red mark{background:#dd584f;color:#f5f5f5;}
+      .ua_info mark{padding:2px 5px;}
       .user_agent textarea{width:100%;font:bold 16px Arial;text-align:center;background:transparent;color:inherit;overflow:hidden;border:0;}
       .user_agent.big{font-size:470%;font-weight:bold;overflow-wrap:break-word;}
       .flying-image{position:fixed;top:-9999px;left:-9999px;}
@@ -41,7 +41,9 @@
   <body class="default">
     <div class="wrapper">
       <div class="ua_menu space">
-        <div class="ua_title home"><a href="./useragent.html">Home</a></div>
+        <div class="ua_title ua_list"><a href="./useragent.html">Home</a></div>
+        <div class="ua_title ua_list"><a href="javascript:goTo('url')">[url]</a></div>
+        <div class="ua_title ua_list"><a href="javascript:goTo('content')">[content]</a></div>
         <div class="ua_title pingdom"><a href="//tools.pingdom.com" target="_blank">Pingdom</a></div>
         <div class="ua_title lighthouse"><a href="//developers.google.com/speed/pagespeed/insights/" target="_blank">Lighthouse</a></div>
         <div class="ua_title gtmetrix"><a href="//gtmetrix.com" target="_blank">GTmetrix</a></div>
@@ -78,6 +80,15 @@
         var parent = 'parent' in options && parent.tagName ? options.parent : document.querySelector('head');
         parent.appendChild(js_new);
       }
+
+      function goTo(data) {
+        var chk_content = ua_wl.search.indexOf('content=true') != -1;
+        var chk_url = ua_wl.search.indexOf('url=true') != -1;
+        var ua_param = data == 'content' && chk_url || data == 'url' && chk_content ? 'content=true&url' : data;
+        var ua_search = ua_param +'=true';
+        if (ua_search.indexOf('url=true') != -1) ua_search = ua_search + '&data='+ encodeURIComponent(user_agent);
+        ua_wl.href = './useragent.html?'+ ua_search;
+      }
       
       /* {website-speed-test} */
       var ua_name = '';
@@ -96,9 +107,9 @@
       }
 
       if (ua_chk) {
-        document.querySelector('.ua_info .ua_js').classList.add('red');
+        document.querySelector('.ua_info .ua_js').classList.add('_red');
         document.querySelector('.ua_info .ua_js mark').innerHTML = 'not loaded';
-        document.querySelector('.ua_info .ua_img').classList.add('red');
+        img_ua.classList.add('_red');
         document.querySelector('.ua_info .ua_img mark').innerHTML = 'not loaded';
       }
       
@@ -106,22 +117,27 @@
         var js_list = ['https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js','https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js','https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js','https://pagead2.googlesyndication.com/pagead/show_ads.js','https://www.googletagmanager.com/gtm.js?id=GTM-K9CP2C8','https://www.googletagmanager.com/gtag/js','https://www.google-analytics.com/analytics.js','https://s10.histats.com/js15_as.js','https://st.chatango.com/js/gz/emb.js','https://twemoji.maxcdn.com/v/latest/twemoji.min.js'];
         for (var i = 0; i < js_list.length; i++) {
           addScript({data: js_list[i], async: true, callback: function(error) {
-            var js_class = error ? 'red' : 'green';
+            var js_ua = document.querySelector('.ua_info .ua_js');
+            var js_class = error ? '_red' : '_green';
             var js_str = error ? 'failed to load' : 'loaded';
-            document.querySelector('.ua_info .ua_js').classList.add(js_class);
-            document.querySelector('.ua_info .ua_js mark').innerHTML = js_str;
+            js_ua.className = js_ua.className.replace(/_(red|green)/, '');
+            js_ua.classList.add(js_class);
+            js_ua.querySelector('mark').innerHTML = js_str;
           }});
         }
         var img_list = ['https://i.postimg.cc/4Z7FxGyy/terminator-two-judgement-day.jpg','https://i.postimg.cc/zq5d7RjH/avatar-2009.jpg','https://i.postimg.cc/jxWv26sm/avengers-endgame.jpg','https://i.postimg.cc/CwXRYbQz/the-dark-knight-2008.jpg','https://i.postimg.cc/RMcYgfwD/tenet.jpg'];
         for (var j = 0; j < img_list.length; j++) {
           var add_img = document.createElement('img');
+          var img_ua = document.querySelector('.ua_info .ua_img');
           add_img.addEventListener('load', function() {
-            document.querySelector('.ua_info .ua_img').classList.add('green');
-            document.querySelector('.ua_info .ua_img mark').innerHTML = 'loaded';
+            img_ua.classList.remove('_red');
+            img_ua.classList.add('_green');
+            img_ua.querySelector('mark').innerHTML = 'loaded';
           });
           add_img.addEventListener('error', function() {
-            document.querySelector('.ua_info .ua_img').classList.add('red');
-            document.querySelector('.ua_info .ua_img mark').innerHTML = 'failed to load';
+            img_ua.classList.remove('_green');
+            img_ua.classList.add('_red');
+            img_ua.querySelector('.mark').innerHTML = 'failed to load';
           });
           add_img.className = 'flying-image';
           add_img.src = img_list[j];
@@ -140,7 +156,7 @@
         document.querySelector('.user_agent.big').innerHTML = ua_mark;
       }
 
-      if (ua_wl.search.indexOf('url=true') != -1 && ua_wl.search.indexOf('data=') == -1) ua_wl.href = '//'+ ua_wl.hostname + ua_wl.pathname +'?url=true&data='+ encodeURIComponent(user_agent);
+      if (ua_wl.search.indexOf('url=true') != -1 && ua_wl.search.indexOf('data=') == -1) goTo('url');
     </script>
   </body>
 </html>
