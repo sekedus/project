@@ -6,5 +6,6 @@
 - [Editor (Simple editor with syntax highlighting)](https://sekedus.github.io/project/editor/)
 - [Dino Bot (Dinosaur Game with autoplay)](https://sekedus.github.io/project/dinobot/)
 - [Porsi Haji (Cek Estimasi Keberangkatan Haji Indonesia)](https://sekedus.github.io/project/porsihaji/)
+- [What is My Screen Resolution?](https://sekedus.github.io/project/screenresolution.html)
 
 by [`Sekedus`](https://sekedus.blogspot.com)
