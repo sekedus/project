@@ -156,6 +156,11 @@ button {
   padding: 6px 12px;
   font-size: 100%;
   text-transform: uppercase;
+  border: 1px solid #767676;
+}
+
+.dino-btn[disabled] {
+  border-color: #d0d0d0;
 }
 
 .dino-outer:first-of-type {
