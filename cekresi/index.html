@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark_dimmed">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek Resi</title>
+    <link href="https://unpkg.com/@primer/css@21.3.6/dist/primer.css" rel="stylesheet" />
+    <style>
+      .TimelineItem:first-of-type:before {
+        top: var(--stack-padding-normal);
+      }
+      [role=button] {
+        cursor: pointer;
+      }
+      .loading-wait {
+        position: relative;
+        overflow: hidden;
+      }
+      .loading-wait:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-indent: -9999px;
+        z-index: 2147483647;
+        background: rgba(208, 215, 222, .5) url(./loading.svg) no-repeat center/40% 40%;
+      }
+
+      html, body {
+        background-color: var(--bgColor-inset, var(--color-canvas-inset)) !important;
+      }
+      .rs-container {
+        max-width: 900px;
+      }
+      #fr-courier.placeholder-color {
+        color: var(--fgColor-muted, var(--color-fg-subtle));
+      }
+      #fr-courier.placeholder-color option {
+        color: var(--fgColor-default, var(--color-fg-default));
+      }
+      .hs-close {
+        top: -15px;
+        padding: 2px 8px;
+        border-radius: 0;
+      }
+      .hs-item .hs-remove {
+        width: 26px;
+        height: 26px;
+      }
+      .back-to .btn {
+        padding: 6px 10px;
+      }
+
+      @media(prefers-color-scheme: dark) {
+        .loading-wait:before {
+          background-color: rgba(0, 0, 0, .5);
+        }
+      }
+    </style>
+  </head>
+  <body class="f4">
+    <div class="rs-container mx-auto p-4">
+      <div class="text-center">
+        <h1><a class="Link--primary no-underline" href="./">Cek Resi</a></h1>
+        <h4 class="text-medium mt-2">Lacak status dan posisi paket dari resi JNE, J&T, Sicepat, Pos Indonesia, Ninja, Tiki dan Wahana</h4>
+      </div>
+      <div id="rs-form" class="input-group d-block mt-5 p-4 color-bg-default border rounded-2">
+        <form>
+          <label for="fr-courier">Pilih Kurir</label>
+          <select id="fr-courier" class="form-select input-monospace col-12 mt-1 placeholder-color" name="courier" required>
+            <option value="" hidden disabled selected>-- Pilih Kurir --</option>
+            <option value="anteraja">Anteraja</option>
+            <option value="dakota">Dakota Cargo</option>
+            <option value="idx">ID Express</option>
+            <option value="indah">Indah Logistik</option>
+            <option value="jaskipin">Jaskipin</option>
+            <option value="jne">JNE</option>
+            <option value="lion">Lion Parcel</option>
+            <option value="ninja">Ninja Xpress</option>
+            <option value="sap">SAP Express</option>
+            <option value="sentral">Sentral Cargo</option>
+            <option value="sicepat">Sicepat</option>
+            <option value="spx">Shopee Express</option>
+            <option value="tiki">TIKI</option>
+            <option value="toped">Tokopedia Kurir Rekomendasi</option>
+          </select>
+          <div class="mt-3">
+            <label for="fr-awb">Nomor Resi</label>
+            <input id="fr-awb" class="form-control mt-1" name="awb" type="text" placeholder="Nomor Resi" autocapitalize="off" required/>
+          </div>
+          <div class="d-flex flex-justify-between mt-4 mb-1">
+            <button class="fr-track btn btn-primary flex-auto" type="submit">Lacak Paket</button>
+            <button class="fr-history btn flex-auto ml-3" type="button" disabled>Riwayat Pencarian</button>
+          </div>
+        </form>
+      </div>
+      <div id="rs-history" class="position-relative mt-5 p-2 color-bg-default border rounded-2 d-none">
+        <button class="hs-close btn btn-danger position-absolute right-2" type="button">X</button>
+        <div class="hs-list d-flex flex-wrap"></div>
+      </div>
+      <div class="rs-share d-flex mt-5 d-none">
+        <input class="sh-link form-control flex-1" type="text" placeholder="Share Link" readonly />
+        <button class="sh-copy btn ml-2 color-fg-on-emphasis color-bg-accent-emphasis color-border-accent-emphasis" type="button" data-clipboard-target=".sh-link">Copy</button>
+      </div>
+      <div id="rs-detail" class="mt-3 p-4 pb-5 color-bg-default border rounded-2 d-none"></div>
+      <footer class="footer pt-8 pb-2 f6 color-fg-muted">
+        <div class="text-center">Powered by <a class="Link--primary" href="https://github.com/vercel/vercel?tab=readme-ov-file" target="_blank">&#9650; Vercel</a> and <a class="Link--primary" href="https://github.com/primer/css?tab=readme-ov-file" target="_blank">Primer CSS</a></div>
+      </footer>
+      <div class="back-to position-fixed right-5 bottom-0 bottom-lg-6"><div class="to-top btn d-lg-block rounded-0">▲</div><div class="to-bottom btn d-lg-block rounded-0">▼</div></div>
+    </div>
+
+    <script src="./clipboard.min.js"></script>
+    <script>
+      function showHistory() {
+        const data = getHistory();
+        let hs_str = '';
+        for (let i in data) {
+          const track = data[i].split('|');
+          hs_str += `
+        <button class="hs-item btn d-flex flex-items-center m-2 p-0 pl-3 circle" data-track="${data[i]}" type="button">
+          <span class="hs-awb">${track[0].toUpperCase()} | ${track[1]}</span>
+          <span class="hs-remove Counter d-flex flex-justify-center flex-items-center ml-2 f5">&#935;</span>
+        </button>`;
+        }
+        rs_history.querySelector('.hs-list').innerHTML = hs_str;
+
+        rs_history.querySelectorAll('.hs-list .hs-item').forEach(function(item) {
+          item.querySelector('.hs-awb').addEventListener('click', (e) => {
+            const data = e.target.parentElement.dataset.track.split('|');
+            fr_courier.value = data[0];
+            fr_awb.value = data[1];
+            fr_track.click();
+          });
+          item.querySelector('.hs-remove').addEventListener('click', (e) => {
+            const data = e.target.parentElement.dataset.track;
+            setHistory(data);
+            e.target.parentElement.remove();
+          });
+        });
+      }
+
+      function setHistory(remove) {
+        let ghs = getHistory();
+        const nhs = `${fr_courier.value}|${fr_awb.value.trim()}`;
+        if (remove) {
+          ghs = ghs.filter(item => item !== remove);
+        } else {
+          if (!ghs.includes(nhs)) ghs.push(nhs);
+        }
+        localStorage.setItem('rs_track', JSON.stringify(ghs));
+      }
+
+      function getHistory() {
+        const hs_data = localStorage.getItem('rs_track');
+        return hs_data ? JSON.parse(hs_data) : [];
+      }
+
+      function showTimeline(data) {
+        const tl_data = data.timeline;
+        let tl_str = '<div id="rs-timeline">';
+        for (let i in tl_data) {
+          const opened = '<!-- octicon("issue-opened") --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path></svg>';
+          const proccess = '<!-- octicon("issue-reopened") --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16"><path d="M5.029 2.217a6.5 6.5 0 0 1 9.437 5.11.75.75 0 1 0 1.492-.154 8 8 0 0 0-14.315-4.03L.427 1.927A.25.25 0 0 0 0 2.104V5.75A.25.25 0 0 0 .25 6h3.646a.25.25 0 0 0 .177-.427L2.715 4.215a6.491 6.491 0 0 1 2.314-1.998ZM1.262 8.169a.75.75 0 0 0-1.22.658 8.001 8.001 0 0 0 14.315 4.03l1.216 1.216a.25.25 0 0 0 .427-.177V10.25a.25.25 0 0 0-.25-.25h-3.646a.25.25 0 0 0-.177.427l1.358 1.358a6.501 6.501 0 0 1-11.751-3.11.75.75 0 0 0-.272-.506Z"></path><path d="M9.06 9.06a1.5 1.5 0 1 1-2.12-2.12 1.5 1.5 0 0 1 2.12 2.12Z"></path></svg>';
+          const delivered = '<!-- octicon("check") --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path></svg>';
+          const icon = i == tl_data.length-1 ? opened : i == 0 && data.status == 'DELIVERED' ? delivered : proccess;
+
+          tl_str += `
+          <div class="TimelineItem">
+            <div class="TimelineItem-badge color-bg-${i == tl_data.length-1 ? 'accent' : i == 0 && data.status == 'DELIVERED' ? 'success' : 'severe'}-emphasis color-fg-on-emphasis">
+              ${icon}
+            </div>
+            <div class="TimelineItem-body">
+              <p class="text-semibold">${tl_data[i].date}</p>
+              <span class="color-fg-default">${tl_data[i].desc}</span>
+            </div>
+          </div>`;
+        }
+        tl_str += '</div>';
+        return tl_str;
+      }
+
+      function detailHtml(data, param, name) {
+        let dt_str = '';
+        if (param in data) {
+          dt_str = `<div class="col-12 col-sm-6"><h5>${name}</h5><h4 class="dt-${param}`;
+          if (param == 'status') {
+            const status = data[param] == 'DELIVERED' ? 'success' : 'severe';
+            dt_str += ` d-inline-block color-fg-on-emphasis mt-1 px-2 rounded-2 color-bg-${status}-emphasis`;
+          }
+          dt_str += `">${param == 'courier' ? data[param].name : data[param]}`;
+          if (param == 'courier' && 'service' in data) dt_str += ` (${data.service})`;
+          dt_str += '</h4><hr class="flex-1 border-x" /></div>';
+        }
+        return dt_str;
+      }
+
+      function detailError(message) {
+        rs_detail.classList.remove('border');
+        rs_detail.classList.add('flash', 'flash-error');
+        rs_detail.innerHTML = `<div class="dt-error text-center">${message}</div>`;
+      }
+
+      function showDetail(data) {
+        // console.log(data);
+        if ('error' in data) {
+          const err_msg = data.error == 'NOT_FOUND' ? `Nomor resi ${data.awb} tidak ditemukan atau masih dalam proses penginputan data.` : '!! ERROR: '+ data.error;
+          detailError(err_msg);
+        } else {
+          let dt_str = `<div class="d-flex flex-wrap">${detailHtml(data, 'awb', 'Nomor Resi') + detailHtml(data, 'date', 'Tanggal Pengiriman') + detailHtml(data, 'courier', 'Kurir') + detailHtml(data, 'shipper', 'Pengirim') + detailHtml(data, 'origin', 'Asal') + detailHtml(data, 'receiver', 'Penerima') + detailHtml(data, 'destination', 'Tujuan') + detailHtml(data, 'weight', 'Berat') + detailHtml(data, 'status', 'Status')}</div>`;
+          dt_str += showTimeline(data);
+          rs_detail.innerHTML = dt_str;
+
+          sh_link.value = location.href;
+          rs_share.classList.remove('d-none');
+        }
+      }
+
+      function getData(courier, awb) {
+        fetch(`https://apiresi.vercel.app/?courier=${courier}&awb=${awb}&cache=true`)
+          .then(response => {
+            // if (!response.ok) {
+            //   throw new Error(`Response status ${response.status}`);
+            // }
+            return response.json().catch(err => {
+              throw new Error(`Failed to parse JSON: ${err.message}, status: ${response.status}`);
+            });
+          })
+          .then(data => {
+            rs_form.classList.remove('loading-wait');
+            showDetail(data);
+          })
+          .catch(error => {
+            console.error('!! '+ error);
+            detailError('!! '+ error);
+            rs_form.classList.remove('loading-wait');
+        });
+      }
+
+      function waitData(message) {
+        const wait = message != 'done';
+        fr_courier.disabled = wait;
+        fr_awb.disabled = wait;
+        fr_track.disabled = wait;
+        fr_history.disabled = wait;
+      }
+
+      const rs_form = document.querySelector('#rs-form');
+      const fr_courier = rs_form.querySelector('#fr-courier');
+      const fr_awb = rs_form.querySelector('#fr-awb');
+      const fr_track = rs_form.querySelector('.fr-track');
+      const fr_history = rs_form.querySelector('.fr-history');
+      const rs_history = document.querySelector('#rs-history');
+      const hs_close = rs_history.querySelector('.hs-close');
+      const rs_share = document.querySelector('.rs-share');
+      const sh_link = rs_share.querySelector('.sh-link');
+      const rs_detail = document.querySelector('#rs-detail');
+
+      if (getHistory().length > 0) {
+        fr_history.disabled = false;
+      }
+
+      const rs_query = new URLSearchParams(location.search);
+      if (rs_query.get('courier') && rs_query.get('awb')) {
+        fr_awb.value = rs_query.get('awb');
+        fr_courier.value = rs_query.get('courier');
+        fr_courier.classList.remove('placeholder-color');
+
+        rs_detail.classList.remove('d-none');
+        rs_detail.innerHTML = '<div class="dt-loading text-center color-fg-muted"><img class="avatar-6" src="./mona-loading-dark.gif" /><span class="d-block">Sedang memuat data...</span></div>'; // https://github.githubassets.com/images/mona-loading-dark.gif
+
+        setHistory();
+        rs_form.classList.add('loading-wait');
+        getData(rs_query.get('courier'), rs_query.get('awb'));
+      }
+
+      rs_form.querySelector('form').addEventListener('submit', (e) => {
+        fr_awb.value = fr_awb.value.trim();
+        if (fr_courier.value === '' || fr_awb.value === '') {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      fr_courier.addEventListener('change', (e) => {
+        e.target.classList.remove('placeholder-color');
+      });
+
+      fr_history.addEventListener('click', (e) => {
+        e.target.classList.toggle('selected');
+        rs_history.classList.toggle('d-none');
+        showHistory();
+      });
+
+      hs_close.addEventListener('click', (e) => {
+        fr_history.classList.remove('selected');
+        rs_history.classList.add('d-none');
+      });
+
+      var clipboard = new ClipboardJS('[data-clipboard-target]');
+      clipboard.on('success', function(e) {
+        e.target.classList.add('color-bg-success', 'color-border-success-emphasis');
+        e.trigger.classList.add('color-bg-success-emphasis', 'color-border-success-emphasis');
+        setTimeout(() => {
+          e.target.classList.remove('color-bg-success', 'color-border-success-emphasis');
+          e.trigger.classList.remove('color-bg-success-emphasis', 'color-border-success-emphasis');
+        }, 1000);
+
+        e.clearSelection();
+      });
+
+      clipboard.on('error', function(e) {
+        e.target.classList.add('color-bg-danger', 'color-border-danger-emphasis');
+        e.trigger.classList.add('color-bg-danger-emphasis', 'color-border-danger-emphasis');
+      });
+
+      document.querySelector('.back-to .to-top').addEventListener('click', () => { document.body.scrollIntoView(); });
+      document.querySelector('.back-to .to-bottom').addEventListener('click', () => { window.scrollTo(0, document.body.scrollHeight); });
+    </script>
+  </body>
+</html>

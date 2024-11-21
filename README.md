@@ -7,5 +7,6 @@
 - [Dino Bot (Dinosaur Game with autoplay)](https://sekedus.github.io/project/dinobot/)
 - [Porsi Haji (Cek Estimasi Keberangkatan Haji Indonesia)](https://sekedus.github.io/project/porsihaji/)
 - [What is My Screen Resolution?](https://sekedus.github.io/project/screenresolution.html)
+- [Cek Resi](https://sekedus.github.io/project/cekresi/)
 
 by [`Sekedus`](https://sekedus.blogspot.com)
